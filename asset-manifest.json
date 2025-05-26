@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/my-website/static/css/main.e01e3362.css",
+    "main.js": "/my-website/static/js/main.b3f43d2e.js",
+    "static/media/UTMRobotics.png": "/my-website/static/media/UTMRobotics.ac2d221338ddc8ec9165.png",
+    "static/media/about_me.png": "/my-website/static/media/about_me.6ad3d3a320e1017d1355.png",
+    "index.html": "/my-website/index.html",
+    "main.e01e3362.css.map": "/my-website/static/css/main.e01e3362.css.map",
+    "main.b3f43d2e.js.map": "/my-website/static/js/main.b3f43d2e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e01e3362.css",
+    "static/js/main.b3f43d2e.js"
+  ]
+}
