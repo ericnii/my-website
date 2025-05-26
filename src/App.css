@@ -384,7 +384,7 @@ button:hover {
 .icons {
   position: absolute; /* Takes it out of normal flow */
   left: -500px; /* Adjust this value to move horizontally */
-  top: 105%; /* Centers vertically */
+  top: 120%; /* Centers vertically */
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 30px; /* Reduced from 100px */
@@ -412,7 +412,7 @@ button:hover {
 .follow {
   position:absolute;
   left: -580px;
-  top: 250px;
+  top: 270px;
   font-size: 15px;
 }
 
