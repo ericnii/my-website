@@ -205,14 +205,32 @@ h2 {
 }
 
 .resume {
-  
+  background:#FFEA00;
+  width: 220px;
+  height: 50px;
+  border-radius: 22px;
+  border: 1px solid #555;
+  font-size: 18px;
+  padding-right: 20px;
+}
+
+.resume-container {
+  position: relative;
+  left: 1200px;
+  top: -470px;
+}
+
+.arrow {
+  color: black;
+  position: relative;
+  left: -40px;
 }
 
 .project {
   position: relative;
   top:40px;
   left: 770px;
-  font-size: 40px;
+  font-size: 20px;
   color: aqua;
 }
 

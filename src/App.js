@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {faPhone, faEnvelope, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import green from './UTMRobotics.png';
 
 
@@ -136,7 +136,19 @@ function App() {
             <div>
               <img className='about-image' src={about_me} alt="" />
             </div>
-            {/* <button onClick={() => window.open('/resume.pdf', '_blank')}>Check out my resume!</button> */}
+            <div className="resume-container">
+              <a 
+                href={`${process.env.PUBLIC_URL}/resume.pdf`} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resume-button"
+              >
+                <button className='resume'>
+                  View My Resume!
+                </button>
+                <FontAwesomeIcon className='arrow' icon={faArrowRight}/>
+              </a>
+            </div>
           </ParallaxLayer>
 
           {/* Projects */}
