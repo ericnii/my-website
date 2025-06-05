@@ -4,12 +4,12 @@ import animation from './animation.json';
 import about_me from './about_me.png';
 import Lottie from 'lottie-react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'; 
-import { useRef,useState } from 'react';
+import { useRef,useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPhone, faEnvelope, faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import green from './UTMRobotics.png';
 
 
@@ -36,7 +36,7 @@ function App() {
     } else if (name === "Projects") {
       ref.current.scrollTo(2);
     } else {
-      ref.current.scrollTo(3);
+      ref.current.scrollTo(contactScroll);
     }
   }
 
@@ -48,6 +48,24 @@ function App() {
     deleteSpeed: 50,
     delaySpeed: 1000,
   });
+  const [pages, setPages] = useState(() => {
+    return window.innerWidth <= 480 ? 5 : 4;
+  });
+  
+  const contactScroll = (pages === 5 ? 4 : 3);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newPages = window.innerWidth <= 480 ? 5 : 4;
+      setPages(newPages);
+    };
+    
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); 
 
   const [about] = useTypewriter ({
     words: [' Me', ' Eric Ni'],
@@ -93,13 +111,18 @@ function App() {
   return (
     <div className="website">
       <div>
-        <Parallax pages={4} ref={ref}>
+        <Parallax pages={pages} ref={ref} key={pages}>
           {/* add this to ParallaxLayer props if I want old bg: style={{backgroundImage: `url(${background})`, backgroundSize: 'cover'}} */}
           {/* Home page */}
           <ParallaxLayer offset={0}>
-            <h1 className='front-title'>
+            <div className='background-layer'>
+              <div className='content-layer'>
+                            <h1 className='front-title'>
               Eric Ni
             </h1>  
+              </div>
+            </div>
+
             <h2>
               {text}
               <Cursor cursorStyle="|"/>
@@ -110,6 +133,7 @@ function App() {
 
           {/* Second page / About Me */}
           <ParallaxLayer offset={1} speed={1}>
+          <div className='about-text-container'>
             <h1 className='about'>
               About
               <span className='about-typewriter'>
@@ -117,38 +141,35 @@ function App() {
               </span>
               <Cursor cursorStyle="|"/>
             </h1>
-
             <p className='about-text'>
               Hello, my name is Eric 👋 ! 
             </p>
 
-            <p className='about-text2'>
-              I’m a second-year Computer Science student @ University of Toronto Mississauga with a passion for turning ideas into code. I love tackling challenges, building solutions, and constantly expanding my skills in programming and web development.
-            </p>
+            <p className='about-text2'>I'm 19, born and raised in Toronto, Canada, and ethnically Chinese. I’m a second-year Computer Science student @ University of Toronto Mississauga with a passion for turning ideas into code. I love tackling challenges, building solutions, and constantly expanding my skills in programming and web development.</p>
             <p className='about-text2'>Currently, I’m looking for opportunities to collaborate, contribute to meaningful projects, and learn from experienced developers.</p>
             <p className='about-text2'>Outside of coding, I am an avid music-lover, thrifter, swimmer, and gym-goer. I am also a die-hard NBA and MLB fan, with some NHL sprinkled in here and there. If you're wondering, yes I am indeed a Toronto sports fan despite all the heartbreak. I will support the Leafs, Jays, and Raptors forever, and I will die on that hill!</p>
             <p className='skills-title'>Skills</p>
             <p className='skills-type'>Languages</p>
             <p className='skills'>JavaScript, HTML, CSS, SQL, C++, Java, Bash, C, Python, LaTeX</p>
             <p className='skills-type'>Developer Tools/Frameworks</p>
-            <p className='skills'>React.js, Spring Boot, Git, PyCharm, IntelliJ, VS Code</p>
+            <p className='skills'>React.js, Spring Boot, Git, PyCharm, IntelliJ, VS Code</p> 
 
-            <div>
+            <a 
+              href={`${process.env.PUBLIC_URL}/resume.pdf`} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resume-button"
+            >
+              <button className='resume'>
+                View My Resume!
+              </button>
+            </a>
+          </div>
+
+            <div className='image-container'>
               <img className='about-image' src={about_me} alt="" />
             </div>
-            <div className="resume-container">
-              <a 
-                href={`${process.env.PUBLIC_URL}/resume.pdf`} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="resume-button"
-              >
-                <button className='resume'>
-                  View My Resume!
-                </button>
-                <FontAwesomeIcon className='arrow' icon={faArrowRight}/>
-              </a>
-            </div>
+
           </ParallaxLayer>
 
           {/* Projects */}
@@ -171,7 +192,7 @@ function App() {
                   The Green Defender
                 </h3>
                 <p className='project-text-green'>An Arduino-based robotic device using C++ that monitors plant health through soil temperature, humidity, and moisture sensors, with added motion detection to protect crops from animals. Combines environmental awareness with practical robotics.</p>
-                <div className='project-skills-container-2'>
+                <div className='green-skills-container'>
                   <div className='project-skills'>C++</div>
                   <div className='project-skills'>Arduino</div>
                 </div>
@@ -201,14 +222,14 @@ function App() {
           </ParallaxLayer>
 
           {/* Contact Me */}
-          <ParallaxLayer offset={3} speed={1}>
+          <ParallaxLayer offset={contactScroll} speed={1}>
             <h1 className='contact-title'>
               Get in touch. 
             </h1>
             <p className='contact-text'>
               Interested to collaborate or have any questions? Reach out via email, phone, or connect through my socials!
-            </p>
-            <form className='contact' onSubmit={onSubmit}>
+            </p> 
+            <form onSubmit={onSubmit}>
                 <div className='input-box'>
                   <label>Full Name</label>
                   <input name='name' className='field' placeholder='Enter your name' required/>
@@ -222,42 +243,46 @@ function App() {
                   <textarea name='message'className='msg' placeholder='Enter your message' required></textarea>
                 </div>
                 <button>Submit</button>
-                <p className='follow'>Follow me on my socials and feel free to shoot a DM!</p>
-
-                <div className='icons'>
-                  <div>
-                    <a href='https://www.instagram.com/erxc._.n?igsh=NHZ4cDZqNDA5dmpk' target='_blank' rel="noreferrer">
-                      <FontAwesomeIcon icon={faInstagram}/>
-                    </a>
-                  </div>
-                  <div>
-                    <a href='https://github.com/ericnii' target='_blank' rel="noreferrer">
-                      <FontAwesomeIcon icon={faGithub}/>
-                    </a>
-                  </div>
-                  <div>
-                    <a href='https://www.linkedin.com/in/eric-ni-017985225/' target='_blank' rel="noreferrer">
-                      <FontAwesomeIcon icon={faLinkedin} />
-                    </a>
-                  </div>
-                </div>
-
-                <div className='contact-icons'>
-                    <FontAwesomeIcon className='phone' icon={faPhone}/>
-                    <p>+1 (647)-545-9818</p>
-                </div>
-                <div className='contact-icons'>
-                    <FontAwesomeIcon className='email' icon={faEnvelope}/>
-                    <p className='my-email'>ericni2013@gmail.com</p>
-                </div>
             </form>
+            <div className='contact'>
+              <p className='follow'>Follow me on my socials and feel free to shoot a DM!</p>
+              <div className='icons'>
+                <div>
+                  <a href='https://www.instagram.com/erxc._.n?igsh=NHZ4cDZqNDA5dmpk' target='_blank' rel="noreferrer">
+                    <FontAwesomeIcon icon={faInstagram}/>
+                  </a>
+                </div>
+                <div>
+                  <a href='https://github.com/ericnii' target='_blank' rel="noreferrer">
+                    <FontAwesomeIcon icon={faGithub}/>
+                  </a>
+                </div>
+                <div>
+                  <a href='https://www.linkedin.com/in/eric-ni-017985225/' target='_blank' rel="noreferrer">
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='contact2'>
+              <div className='contact-icons'>
+                  <FontAwesomeIcon className='phone' icon={faPhone}/>
+                  <p className='my-num'>+1 (647)-545-9818</p>
+              </div>
+              <div className='contact-icons'>
+                  <FontAwesomeIcon className='email' icon={faEnvelope}/>
+                  <p className='my-email'>ericni2013@gmail.com</p>
+              </div>
+            </div>
           </ParallaxLayer>
         </Parallax>
       </div>
-      <Button className='top-categories' name={"EN"} handle={()=>{buttonHandle("EN")}}/>
-      <Button className='top-categories' name={"About Me"} handle={() => {buttonHandle("About Me")}}/>
-      <Button className='top-categories' name={"Projects"} handle={() => {buttonHandle("Projects")}}/>
-      <Button className='top-categories' name={"Contact Me"} handle={() => {buttonHandle("Contact Me")}}/>
+      <div className='top-categories'>
+        <Button name={"EN"} handle={()=>{buttonHandle("EN")}}/>
+        <Button name={"About Me"} handle={() => {buttonHandle("About Me")}}/>
+        <Button name={"Projects"} handle={() => {buttonHandle("Projects")}}/>
+        <Button name={"Contact Me"} handle={() => {buttonHandle("Contact Me")}}/>
+      </div>
     </div>
   );
 }
