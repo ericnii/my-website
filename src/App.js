@@ -180,7 +180,7 @@ function App() {
                 <h3 className='project-title'>
                   Personal Portfolio Website
                 </h3>
-                <p className='project-text'>My responsive personal portfolio (this site!) made using React, JavaScript, and HTML/CSS. Various features include parallax scrolling, animations, dark mode, and a Web3Forms contact form.</p>
+                <p className='project-text'>My responsive personal portfolio (this site!) is built with React, JavaScript, and HTML/CSS. It is designed to adapt seamlessly to all devices. Various features include parallax scrolling, animations, dark mode, and a Web3Forms contact form</p>
                 <div className='project-skills-container-3'>
                   <div className='project-skills'>ReactJS</div>
                   <div className='project-skills'>JavaScript</div>
