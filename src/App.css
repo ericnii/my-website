@@ -310,6 +310,13 @@ h2 {
   gap: 30px;
 }
 
+.green-skills-container {
+  display: grid;
+  grid-template-columns: repeat(2,150px);
+  justify-content: center;
+  gap: 30px;
+}
+
 .project-skills-container-3 {
   display: grid;
   grid-template-columns: repeat(3,140px);
@@ -611,6 +618,11 @@ button:hover {
     gap: 10px;
   }
 
+  .green-skills-container {
+    grid-template-columns: repeat(2,100px);
+    gap: 10px;
+  }
+
   .project-skills-container-3 {
     grid-template-columns: repeat(3,100px);
     gap: 10px;
@@ -809,6 +821,10 @@ button:hover {
   }
 
   .project-skills-container-2 {
+    grid-template-columns: repeat(2,70px);
+  }
+
+  .green-skills-container {
     grid-template-columns: repeat(2,70px);
   }
 
@@ -1034,6 +1050,11 @@ button:hover {
     margin-left: 3%;
   }
 
+  .green-skills-container {
+    grid-template-columns: repeat(2,80px);
+    margin-left: 3%;
+  }
+
   .project-skills-container-3 {
     grid-template-columns: repeat(3,80px);
     margin-left: 3%;
@@ -1151,7 +1172,7 @@ button:hover {
     width: 200px;
     height: 300px;
     right: 45%;
-    top: 41%;
+    top: 39%;
   }
   
   h2 {
@@ -1199,7 +1220,7 @@ button:hover {
     width: 100%;
     display: flex;
     justify-content: center;
-    top: 37%;
+    top: 41%;
   }
 
   .about-image {
@@ -1314,7 +1335,7 @@ button:hover {
 
   .contact-title {
     font-size: 25px; 
-    margin-top: 22%;
+    margin-top: 18%;
     margin-bottom: 5%;
   }
 
@@ -1331,7 +1352,7 @@ button:hover {
   }
 
   form .input-box {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 5px;
   }
 
@@ -1348,7 +1369,7 @@ button:hover {
 
   .msg {
     width: 280px;
-    height: 170px;
+    height: 150px;
     font-size: 10px;
   }
 
@@ -1359,29 +1380,31 @@ button:hover {
   }
 
   .icons a {
-    width: 40px; 
-    height: 40px;
+    width: 30px; 
+    height: 30px;
     border-radius: 50%; 
-    font-size: 1.5rem; 
+    font-size: 1rem; 
   }
 
   .contact {
-    top: 88%;
+    top: 93%;
   }
 
   .follow {
     font-size: 12px;
-    margin-bottom: 23%;
+    margin-bottom: 20%;
   }
 
   .phone {
-    font-size: 20px;
+    font-size: 15px;
     margin-left: -3%;
+    margin-bottom: -8%;
   }
 
   .email {
-    font-size: 20px;
+    font-size: 15px;
     margin-left: -4%;
+    margin-bottom: -4%;
   }
 
   .my-email {
@@ -1394,7 +1417,7 @@ button:hover {
 
   .contact-icons {
     position: relative;
-    margin-top: -5%;
+    margin-top: -9%;
   }
 
   .contact2 {
@@ -1403,7 +1426,7 @@ button:hover {
     position: relative;
     align-content: center;
     left: -4%;
-    margin-top: 22%;
+    margin-top: 28%;
   }
 }
 
@@ -1551,7 +1574,6 @@ button:hover {
   .contact-icons {
     position: relative;
     margin-top: -7%;
-
   }
 
   .contact2 {
