@@ -227,7 +227,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 5%;
+  margin-left: 6%;
   margin-top: 20px;
 }
 
@@ -426,7 +426,7 @@ button:hover {
   background-color: transparent;
   position: fixed;
   width: 100%;
-  top: 85%;
+  top: 90%;
 }
 
 .icons {
