@@ -12,6 +12,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import green from './UTMRobotics.png';
 import Aurora from './Aurora';
+import BlurText from "./BlurText";
+import FadeContent from './FadeContent'
+
 
 function Button ({ name, handle} ) {
     if (name === "Contact Me") {
@@ -42,10 +45,10 @@ function App() {
 
   const ref = useRef();
   const [text] = useTypewriter ({
-    words: ['CS @ UofT', 'Aspiring Full Stack Developer'],
+    words: ['CS @ UofT', 'Aspiring Full Stack Developer', 'Aspiring Software Developer', 'Aspiring Web Developer', 'Aspiring AI Developer'],
     loop: Infinity,
-    typeSpeed: 50,
-    deleteSpeed: 50,
+    typeSpeed: 20,
+    deleteSpeed: 20,
     delaySpeed: 1000,
   });
   const [pages, setPages] = useState(() => {
@@ -121,19 +124,22 @@ function App() {
           {/* add this to ParallaxLayer props if I want old bg: style={{backgroundImage: `url(${background})`, backgroundSize: 'cover'}} */}
           {/* Home page */}
           <ParallaxLayer offset={0}>
-            <div className='background-layer'>
-              <div className='content-layer'>
-                            <h1 className='front-title'>
-              Eric Ni
-            </h1>  
-              </div>
-            </div>
-
-            <h2>
-              {text}
-              <Cursor cursorStyle="|"/>
-            </h2>
-            <Lottie className='animation' animationData={animation}></Lottie>
+            <BlurText
+              text="Eric Ni"
+              delay={700}
+              animateBy="words"
+              direction="top"
+              className='front-title'
+            />
+            <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000} className='fade-text'>
+              <h2>
+                {text}
+                <Cursor cursorStyle="|"/>
+              </h2>
+            </FadeContent>
+            <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000} className='fade-animation'>
+              <Lottie className='animation' animationData={animation}></Lottie>
+            </FadeContent>
             
           </ParallaxLayer>
 
