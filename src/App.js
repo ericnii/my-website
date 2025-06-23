@@ -11,7 +11,7 @@ import { faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import green from './UTMRobotics.png';
-
+import Aurora from './Aurora';
 
 function Button ({ name, handle} ) {
     if (name === "Contact Me") {
@@ -110,6 +110,12 @@ function App() {
 
   return (
     <div className="website">
+      <Aurora
+        colorStops={["#0e3c92", "#FFEA00", "#2979ff"]}
+        blend={0.5}
+        amplitude={1.0}
+        speed={0.5}
+      />
       <div>
         <Parallax pages={pages} ref={ref} key={pages}>
           {/* add this to ParallaxLayer props if I want old bg: style={{backgroundImage: `url(${background})`, backgroundSize: 'cover'}} */}
@@ -145,8 +151,8 @@ function App() {
               Hello, my name is Eric 👋 ! 
             </p>
 
-            <p className='about-text2'>I'm 19, born and raised in Toronto, Canada, and ethnically Chinese. I’m a second-year Computer Science student @ University of Toronto Mississauga with a passion for turning ideas into code. I love tackling challenges, building solutions, and constantly expanding my skills in programming and web development.</p>
-            <p className='about-text2'>Currently, I’m looking for opportunities to collaborate, contribute to meaningful projects, and learn from experienced developers.</p>
+            <p className='about-text2'>I'm 19, born and raised in Toronto, Canada, and ethnically Chinese. I'm a second-year Computer Science student @ University of Toronto Mississauga with a passion for turning ideas into code. I love tackling challenges, building solutions, and constantly expanding my skills in programming and web development.</p>
+            <p className='about-text2'>Currently, I'm looking for opportunities to collaborate, contribute to meaningful projects, and learn from experienced developers.</p>
             <p className='about-text2'>Outside of coding, I am an avid music-lover, thrifter, swimmer, and gym-goer. I am also a die-hard NBA and MLB fan, with some NHL sprinkled in here and there. If you're wondering, yes I am indeed a Toronto sports fan despite all the heartbreak. I will support the Leafs, Jays, and Raptors forever, and I will die on that hill!</p>
             <p className='skills-title'>Skills</p>
             <p className='skills-type'>Languages</p>

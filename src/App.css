@@ -7,7 +7,19 @@ body {
   background-color: rgb(0, 0, 23);
   color: aliceblue;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #0a0a23 0%, #0b1e48 50%, #0e3c92 100%);
+  letter-spacing: 0.01em;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* .website {
@@ -23,6 +35,123 @@ body {
   overflow: hidden;
 }
 
+h1, .front-title, h2, .about, .project, .contact-title {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.button, .resume {
+  box-shadow: 0 4px 16px 0 rgba(10, 30, 80, 0.12);
+  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.button, .contact-button {
+  height: 38px;
+  min-height: 0px;
+  max-height: 44px ;
+  padding-top: 4px;
+  padding-bottom: 4px; 
+  line-height: 1.2;
+  font-size: 1.08rem;
+}
+
+.button {
+  background: linear-gradient(90deg, #0e3c92 0%, #0b1e48 100%);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 12px;
+  border-width: 0;
+  position: relative;
+  padding: 2px 14px;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 1;
+  background: linear-gradient(90deg, #1de9b6 0%, #2979ff 100%);
+  color: #0a0a23;
+  transform: scale(1.07);
+  box-shadow: 0 8px 24px 0 rgba(41, 121, 255, 0.18);
+}
+
+.contact-button {
+  background: linear-gradient(90deg, #0e3c92 0%, #0b1e48 100%);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 12px;
+  border-width: 0;
+  position: relative;
+  padding: 2px 14px;
+  cursor: pointer;
+  animation: swingContact 1.5s ease-out infinite;  
+  box-shadow: 0 4px 16px 0 rgba(10, 30, 80, 0.12);
+  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.contact-button:hover {
+  opacity: 1;
+  background: linear-gradient(90deg, #1de9b6 0%, #2979ff 100%);
+  color: #0a0a23;
+  animation-play-state: paused;
+  transform: scale(1.07) !important;
+  box-shadow: 0 8px 24px 0 rgba(41, 121, 255, 0.18);
+}
+
+.resume {
+  background: linear-gradient(90deg, #ffe600 0%, #fffde4 100%);
+  color: #0a0a23;
+  font-weight: 600;
+  box-shadow: 0 4px 16px 0 rgba(255, 234, 0, 0.18);
+  border: 1px solid #e0e0e0;
+  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+  padding: 4px 18px;
+  font-size: 1rem;
+}
+
+.resume:hover {
+  background: linear-gradient(90deg, #fffde4 0%, #ffe600 100%);
+  color: #0e3c92;
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px 0 rgba(255, 234, 0, 0.28);
+}
+
+.project-box {
+  box-shadow: 0 8px 25px rgba(41, 121, 255, 0.15);
+  border: 1px solid #1a3a50;
+  background: linear-gradient(90deg, #15274c 60%, #0b1e3c 100%);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.project-box:hover {
+  box-shadow: 0 12px 35px rgba(41, 121, 255, 0.25);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.about-image {
+  box-shadow: 0 10px 30px rgba(41, 121, 255, 0.25);
+  border-radius: 400px;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.about-image:hover {
+  box-shadow: 0 14px 40px rgba(41, 121, 255, 0.35);
+  transform: scale(1.03);
+}
+
+.icons a {
+  box-shadow: 0 2px 8px 0 rgba(10, 30, 80, 0.13);
+  transition: box-shadow 0.3s, transform 0.2s, background 0.3s;
+  background: linear-gradient(135deg, #0e3c92 0%, #0b1e48 100%);
+  color: #fff;
+}
+
+.icons a:hover {
+  opacity: 1;
+  background: linear-gradient(135deg, #1de9b6 0%, #2979ff 100%);
+  color: #0a0a23;
+  box-shadow: 0 6px 18px 0 rgba(41, 121, 255, 0.18);
+  transform: scale(1.15);
+}
 
 .top-categories {
   display: flex;
@@ -33,6 +162,7 @@ body {
   /* border: 2px solid gray; */
   gap: 8%;
   margin-left: 60%;
+  margin-top: 32px;
 }
 
 .button {
@@ -120,10 +250,10 @@ h2 {
 
 .animation {
   position: fixed;
-  width: 450px; 
-  height: 450px; 
-  right: 150px; 
-  top: 26%; 
+  width: 280px; 
+  height: 280px; 
+  right: 210px; 
+  top: 34%; 
 }
 
 
@@ -502,13 +632,14 @@ button:hover {
   .top-categories {
     margin-left: 50%;
     gap: 9%;
+    margin-top: 32px;
   }
 
   .animation {
-    width: 350px;
-    height: 350px;
+    width: 260px;
+    height: 260px;
     right: 11%;
-    top: 26%;
+    top: 30%;
   }
 
   .front-title {
@@ -709,6 +840,7 @@ button:hover {
   .top-categories {
     margin-left: 50%;
     gap: 7.5%;
+    margin-top: 32px;
   }
 
   .button {
@@ -720,10 +852,10 @@ button:hover {
   }
 
   .animation {
-    width: 270px;
-    height: 350px;
+    width: 220px;
+    height: 220px;
     right: 11%;
-    top: 24%;
+    top: 28%;
   }
 
   .front-title {
@@ -915,6 +1047,7 @@ button:hover {
   width: 100%; 
   max-width: 800px; 
   margin: 0 auto; 
+  margin-top: 32px;
 }
 
   .button {
@@ -927,9 +1060,9 @@ button:hover {
 
   .animation {
     width: 200px;
-    height: 300px;
-    right: 12%;
-    top: 31%;
+    height: 200px;
+    right: 8%;
+    top: 33%;
   }
 
   .front-title {
@@ -1149,6 +1282,7 @@ button:hover {
   width: 100%; 
   max-width: 800px; 
   margin: 0 auto; 
+  margin-top: 32px;
 }
 
   .button {
@@ -1160,8 +1294,8 @@ button:hover {
   }
 
   .animation {
-    width: 200px;
-    height: 300px;
+    width: 180px;
+    height: 180px;
     position: fixed; /* or absolute */
     left: 50%;
     top: 43%;
@@ -1440,6 +1574,7 @@ button:hover {
   width: 100%; 
   max-width: 800px; 
   margin: 0 auto; 
+  margin-top: 32px;
 }
 
   .button {
@@ -1451,11 +1586,11 @@ button:hover {
   }
 
   .animation {
-    width: 200px;
-    height: 300px;
+    width: 160px;
+    height: 160px;
     position: fixed; /* or absolute */
     left: 50%;
-    top: 43%;
+    top: 45%;
     transform: translateX(-50%); /* Centers horizontally */
   }
 
