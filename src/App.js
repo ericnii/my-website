@@ -1,19 +1,21 @@
 import './App.css';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import animation from './animation.json';
-import about_me from './about_me.png';
-import Lottie from 'lottie-react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'; 
-import { useRef,useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
-import { faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import green from './UTMRobotics.png';
-import Aurora from './Aurora';
 import BlurText from "./BlurText";
 import FadeContent from './FadeContent'
+import Particles from './Particles';
+import {Link} from 'react-scroll'
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
+import Scroll from './scroll.json';
+import Lottie from 'lottie-react';
+import Skills from "./Skills";
+
 
 
 function Button ({ name, handle} ) {
@@ -31,19 +33,6 @@ function Button ({ name, handle} ) {
 
 function App() {
 
-  function buttonHandle(name) {
-    if (name === "EN") {
-      ref.current.scrollTo(0);
-    } else if (name === "About Me") {
-      ref.current.scrollTo(1);
-    } else if (name === "Projects") {
-      ref.current.scrollTo(2);
-    } else {
-      ref.current.scrollTo(contactScroll);
-    }
-  }
-
-  const ref = useRef();
   const [text] = useTypewriter ({
     words: ['CS @ UofT', 'Aspiring Full Stack Developer', 'Aspiring Software Developer', 'Aspiring Web Developer', 'Aspiring AI Developer'],
     loop: Infinity,
@@ -75,7 +64,6 @@ function App() {
     loop: true,
     typeSpeed: 50,
     deleteSpeed: 50,
-    deleteAll: true,
     delaySpeed: 1000,
   });
 
@@ -112,189 +100,63 @@ function App() {
 
 
   return (
-    <div className="website">
-      <Aurora
-        colorStops={["#0e3c92", "#FFEA00", "#2979ff"]}
-        blend={0.5}
-        amplitude={1.0}
-        speed={0.5}
+    <div id='home' className="website">
+      <Particles
+        particleColors={['#ffffff', '#ffffff']}
+        particleCount={300}
+        particleSpread={10}
+        speed={0.1}
+        particleBaseSize={100}
+        moveParticlesOnHover={true}
+        alphaParticles={false}
+        disableRotation={false}
       />
-      <div>
-        <Parallax pages={pages} ref={ref} key={pages}>
-          {/* add this to ParallaxLayer props if I want old bg: style={{backgroundImage: `url(${background})`, backgroundSize: 'cover'}} */}
-          {/* Home page */}
-          <ParallaxLayer offset={0}>
-            <BlurText
-              text="Eric Ni"
-              delay={700}
-              animateBy="words"
-              direction="top"
-              className='front-title'
-            />
-            <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000} className='fade-text'>
-              <h2>
-                {text}
-                <Cursor cursorStyle="|"/>
-              </h2>
-            </FadeContent>
-            <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000} className='fade-animation'>
-              <Lottie className='animation' animationData={animation}></Lottie>
-            </FadeContent>
-            
-          </ParallaxLayer>
-
-          {/* Second page / About Me */}
-          <ParallaxLayer offset={1} speed={1}>
-          <div className='about-text-container'>
-            <h1 className='about'>
-              About
-              <span className='about-typewriter'>
-                {about}
-              </span>
-              <Cursor cursorStyle="|"/>
-            </h1>
-            <p className='about-text'>
-              Hello, my name is Eric 👋 ! 
-            </p>
-
-            <p className='about-text2'>I'm 19, born and raised in Toronto, Canada, and ethnically Chinese. I'm a second-year Computer Science student @ University of Toronto Mississauga with a passion for turning ideas into code. I love tackling challenges, building solutions, and constantly expanding my skills in programming and web development.</p>
-            <p className='about-text2'>Currently, I'm looking for opportunities to collaborate, contribute to meaningful projects, and learn from experienced developers.</p>
-            <p className='about-text2'>Outside of coding, I am an avid music-lover, thrifter, swimmer, and gym-goer. I am also a die-hard NBA and MLB fan, with some NHL sprinkled in here and there. If you're wondering, yes I am indeed a Toronto sports fan despite all the heartbreak. I will support the Leafs, Jays, and Raptors forever, and I will die on that hill!</p>
-            <p className='skills-title'>Skills</p>
-            <p className='skills-type'>Languages</p>
-            <p className='skills'>JavaScript, HTML, CSS, SQL, C++, Java, Bash, C, Python, LaTeX</p>
-            <p className='skills-type'>Developer Tools/Frameworks</p>
-            <p className='skills'>React.js, Spring Boot, Git, PyCharm, IntelliJ, VS Code</p> 
-
-            <a 
-              href={`${process.env.PUBLIC_URL}/resume.pdf`} 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-button"
-            >
-              <button className='resume'>
-                View My Resume!
-              </button>
-            </a>
-          </div>
-
-            <div className='image-container'>
-              <img className='about-image' src={about_me} alt="" />
-            </div>
-
-          </ParallaxLayer>
-
-          {/* Projects */}
-          <ParallaxLayer offset={2} speed={1}>
-            <h1 className='project'>Projects</h1>
-            <div className='project-container'>
-              <div className='project-box'>
-                <h3 className='project-title'>
-                  Personal Portfolio Website
-                </h3>
-                <p className='project-text'>My responsive personal portfolio (this site!) is built with React, JavaScript, and HTML/CSS. It is designed to adapt seamlessly to all devices. Various features include parallax scrolling, animations, dark mode, and a Web3Forms contact form</p>
-                <div className='project-skills-container-3'>
-                  <div className='project-skills'>ReactJS</div>
-                  <div className='project-skills'>JavaScript</div>
-                  <div className='project-skills'>HTML/CSS</div>
-                </div>
-              </div> 
-              <div className='project-box'>
-                <h3 className='project-title'>
-                  The Green Defender
-                </h3>
-                <p className='project-text-green'>An Arduino-based robotic device using C++ that monitors plant health through soil temperature, humidity, and moisture sensors, with added motion detection to protect crops from animals. Combines environmental awareness with practical robotics.</p>
-                <div className='green-skills-container'>
-                  <div className='project-skills'>C++</div>
-                  <div className='project-skills'>Arduino</div>
-                </div>
-                <img className='green-def' src={green} alt=''/>
-              </div> 
-              <div className='project-box'>
-                <h3 className='project-title'>
-                  Personal Mysh Terminal
-                </h3>
-                <p className='project-text'>A Bash-like terminal emulator in C with 30+ shell features, leveraging POSIX system calls (fork/exec/pipes/signals) and implementing custom parsers for command processing, pipes, and background processes. Demonstrates low-level systems programming mastery.</p>
-                <div className='project-skills-container-2'>
-                  <div className='project-skills'>C</div>
-                  <div className='project-skills'>Git</div>
-                </div>
-              </div> 
-              <div className='project-box'>
-                <h3 className='project-title'>
-                  Paint Application
-                </h3>
-                <p className='project-text'>A Windows Paint-inspired application using Java, implementing core features like drawing tools, color selection, and canvas manipulation. Version-controlled with Git to demonstrate collaborative development practices.</p>
-                <div className='project-skills-container-2'>
-                  <div className='project-skills'>Java</div>
-                  <div className='project-skills'>Git</div>
-                </div>
-              </div> 
-            </div>
-          </ParallaxLayer>
-
-          {/* Contact Me */}
-          <ParallaxLayer offset={contactScroll} speed={1}>
-            <h1 className='contact-title'>
-              Get in touch. 
-            </h1>
-            <p className='contact-text'>
-              Interested to collaborate or have any questions? Reach out via email, phone, or connect through my socials!
-            </p> 
-            <form onSubmit={onSubmit}>
-                <div className='input-box'>
-                  <label>Full Name</label>
-                  <input name='name' className='field' placeholder='Enter your name' required/>
-                </div>
-                <div className='input-box'>
-                  <label>Email Address</label>
-                  <input name='email' className='field' placeholder='Enter your email' required/>
-                </div>
-                <div className='input-box'>
-                  <label>Your Message</label>
-                  <textarea name='message'className='msg' placeholder='Enter your message' required></textarea>
-                </div>
-                <button>Submit</button>
-            </form>
-            <div className='contact'>
-              <p className='follow'>Follow me on my socials and feel free to shoot a DM!</p>
-              <div className='icons'>
-                <div>
-                  <a href='https://www.instagram.com/erxc._.n?igsh=NHZ4cDZqNDA5dmpk' target='_blank' rel="noreferrer">
-                    <FontAwesomeIcon icon={faInstagram}/>
-                  </a>
-                </div>
-                <div>
-                  <a href='https://github.com/ericnii' target='_blank' rel="noreferrer">
-                    <FontAwesomeIcon icon={faGithub}/>
-                  </a>
-                </div>
-                <div>
-                  <a href='https://www.linkedin.com/in/eric-ni-017985225/' target='_blank' rel="noreferrer">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className='contact2'>
-              <div className='contact-icons'>
-                  <FontAwesomeIcon className='phone' icon={faPhone}/>
-                  <p className='my-num'>+1 (647)-545-9818</p>
-              </div>
-              <div className='contact-icons'>
-                  <FontAwesomeIcon className='email' icon={faEnvelope}/>
-                  <p className='my-email'>ericni2013@gmail.com</p>
-              </div>
-            </div>
-          </ParallaxLayer>
-        </Parallax>
-      </div>
       <div className='top-categories'>
-        <Button name={"EN"} handle={()=>{buttonHandle("EN")}}/>
-        <Button name={"About Me"} handle={() => {buttonHandle("About Me")}}/>
-        <Button name={"Projects"} handle={() => {buttonHandle("Projects")}}/>
-        <Button name={"Contact Me"} handle={() => {buttonHandle("Contact Me")}}/>
+        <Link to='home' smooth={true} duration={1000} className='link'>Eric Ni</Link>
+        <Link to='about' smooth={true} duration={1000} className='link'>About Me</Link>
+        <Link to='projects' smooth={true} duration={1000} className='link'>Projects</Link>
+        <Link to='skills' smooth={true} duration={1000} className='link'>Skills</Link>
+        <Link to='contact' smooth={true} duration={1000} className='contact-link'>Contact</Link>
       </div>
+      <div className='front-container'>
+        <BlurText
+          text="Eric Ni"
+          delay={700}
+          animateBy="words"
+          direction="top"
+          className='front-title'
+        />
+        <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000} className='fade-text'>
+          <h2>{text}<Cursor cursorStyle="|"/></h2>
+        </FadeContent>
+        <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000} className='front-buttons'>
+          <Link to='projects' smooth={true} duration={1000} className="front-button">
+            View Projects <FontAwesomeIcon icon={faAngleRight} style={{marginLeft: '8px'}} />
+          </Link>
+          <Link to='contact' smooth={true} duration={1000} className="front-button">
+            Contact <FontAwesomeIcon icon={faAngleRight} style={{marginLeft: '8px'}} />
+          </Link>
+        </FadeContent>
+        <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000}>
+          <Lottie animationData={Scroll} className='scroll-down'/>
+          <div className='scroll-text'>Scroll for more</div>
+        </FadeContent>
+      </div>
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
+      <footer className="footer">
+      <div className="footer-content">
+          <div>© {new Date().getFullYear()} Eric Ni</div>
+          <div> | </div>
+          <div><a href="ericni2013@gmail.com">ericni2013@gmail.com</a></div>
+          <div> | </div>
+          <div><a href="tel:+16475459818">+1 (647)-545-9818</a></div>
+          <div> | </div>
+          <div>Toronto, ON</div>
+        </div>
+      </footer>
     </div>
   );
 }
