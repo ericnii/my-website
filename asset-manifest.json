@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/my-website/static/css/main.14ea22ac.css",
-    "main.js": "/my-website/static/js/main.cee0dec9.js",
+    "main.css": "/my-website/static/css/main.cb808ad3.css",
+    "main.js": "/my-website/static/js/main.f7db0b66.js",
     "static/media/UTMRobotics.png": "/my-website/static/media/UTMRobotics.ac2d221338ddc8ec9165.png",
     "static/media/about_me.png": "/my-website/static/media/about_me.6ad3d3a320e1017d1355.png",
+    "static/media/website.png": "/my-website/static/media/website.ed36ab25992090b26c0b.png",
     "index.html": "/my-website/index.html",
-    "main.14ea22ac.css.map": "/my-website/static/css/main.14ea22ac.css.map",
-    "main.cee0dec9.js.map": "/my-website/static/js/main.cee0dec9.js.map"
+    "main.cb808ad3.css.map": "/my-website/static/css/main.cb808ad3.css.map",
+    "main.f7db0b66.js.map": "/my-website/static/js/main.f7db0b66.js.map"
   },
   "entrypoints": [
-    "static/css/main.14ea22ac.css",
-    "static/js/main.cee0dec9.js"
+    "static/css/main.cb808ad3.css",
+    "static/js/main.f7db0b66.js"
   ]
 }
