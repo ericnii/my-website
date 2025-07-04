@@ -22,11 +22,12 @@ This is my personal interactive portfolio website, built with ReactJS and HTML/C
 How to run the website locally:
 
 1) Clone repository ->   git clone https://github.com/ericnii/my-website.git
-                      cd my-website
    
-2) Install dependencies -> npm install
+3) Go into directory -> cd my-website
+   
+4) Install dependencies -> npm install
 
-3) Run the server -> npm start
+5) Run the server -> npm start
 
 You should now see the website running at http://localhost:3000 ✅ 
                   
