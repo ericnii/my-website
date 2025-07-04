@@ -102,6 +102,42 @@
   border-radius: 20px;
 }
 
+.project-box-image {
+  width: 220px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 16px rgba(41,121,255,0.12);
+  display: block;
+}
+
+.project-box-title {
+  margin-bottom: 10px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.project-box-desc {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.project-box-learn-more {
+  color: #4fc3ff;
+  font-weight: 600;
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.project-box-learn-more:hover {
+  color: #ffe066;
+}
+
 @media (max-width: 900px) {
   .projects-section {
     padding-top: 40px;

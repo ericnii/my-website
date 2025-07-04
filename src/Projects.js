@@ -3,30 +3,27 @@ import website from './website.png';
 import Portfolio from './website'
 import Green from './green_def'
 import { useNavigate } from 'react-router-dom';
+import websiteImg from './website.png';
+import './App.css';
 
 
 function Projects() {
+  const navigate = useNavigate();
   return (
     <section id='projects' className='projects-section'>
       <h1 className='project'>Projects</h1>
       <div className='project-container'>
-        <div className='project-box'>
-          <h3 className='project-title'>Personal Portfolio Website</h3>
-          <p className='project-text'>My responsive personal portfolio (this site!) is built with React, JavaScript, and HTML/CSS. It is designed to adapt seamlessly to all devices. Various features include parallax scrolling, animations, dark mode, and a Web3Forms contact form</p>
-          <div className='project-skills-container-3'>
-            <div className='project-skills'>ReactJS</div>
-            <div className='project-skills'>JavaScript</div>
-            <div className='project-skills'>HTML/CSS</div>
-          </div>
+        <div className='project-box' onClick={() => navigate('/website', { state: { fromProjects: true } })}>
+          <img src={websiteImg} alt='My Personal Portfolio' className='project-box-image' />
+          <h3 className='project-title project-box-title'>My Personal Portfolio</h3>
+          <p className='project-text project-box-desc'>What you&apos;re viewing right now!</p>
+          <span className='project-box-learn-more'>Click to learn more <span style={{fontSize: '1.1em', marginLeft: '4px'}}>&rarr;</span></span>
         </div>
-        <div className='project-box'>
-          <h3 className='project-title'>The Green Defender</h3>
-          <p className='project-text-green'>An Arduino-based robotic device using C++ that monitors plant health through soil temperature, humidity, and moisture sensors, with added motion detection to protect crops from animals. Combines environmental awareness with practical robotics.</p>
-          <div className='green-skills-container'>
-            <div className='project-skills'>C++</div>
-            <div className='project-skills'>Arduino</div>
-          </div>
-          <img className='green-def' src={green} alt='' />
+        <div className='project-box' onClick={() => navigate('/greendef', { state: { fromProjects: true } })}>
+          <img src={green} alt='The Green Defender' className='project-box-image' />
+          <h3 className='project-title project-box-title'>The Green Defender</h3>
+          <p className='project-text project-box-desc'>An arduino-based robotic device that monitors plant health.</p>
+          <span className='project-box-learn-more'>Click to learn more <span style={{fontSize: '1.1em', marginLeft: '4px'}}>&rarr;</span></span>
         </div>
         <div className='project-box'>
           <h3 className='project-title'>Personal Mysh Terminal</h3>
