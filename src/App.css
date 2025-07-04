@@ -47,23 +47,52 @@ body {
 }
 
 .front-button {
-  padding: 12px 28px;
-  border-radius: 25px;
-  border: none;
-  color: #0a0a23;
-  background: linear-gradient(90deg, #0741ad 0%, #5e90e6 100%);
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 14px 36px;
+  border-radius: 18px;
+  border: 2px solid rgba(15,246,252,0.5);
+  color: #0ff6fc;
+  background: rgba(10, 10, 35, 0.55);
+  font-size: 1.2rem;
+  font-family: 'Outfit', 'Orbitron', 'Montserrat', sans-serif;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0 4px 16px 0 rgba(41, 121, 255, 0.12);
+  box-shadow: 0 4px 24px 0 rgba(41, 255, 255, 0.18), 0 1.5px 8px 0 #0ff6fc33;
+  backdrop-filter: blur(8px);
+  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s, border 0.3s;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.04em;
+}
+
+.front-button::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #0ff6fc 0%, #4fc3ff 100%);
+  opacity: 0.18;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
 
 .front-button:hover {
-  background: linear-gradient(90deg, #0e3c92 0%, #0b1e48 100%);
+  background: rgba(10, 30, 80, 0.85);
   color: #fff;
-  transform: scale(1.07);
-  box-shadow: 0 8px 24px 0 rgba(41, 121, 255, 0.18);
+  border: 2px solid #0ff6fc;
+  box-shadow: 0 8px 32px 0 #0ff6fc99, 0 2px 12px 0 #4fc3ff55;
+  transform: scale(1.09) rotate(-1deg);
+}
+
+.front-button:hover::before {
+  opacity: 0.35;
+  animation: borderGlow 1.2s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { box-shadow: 0 0 8px #0ff6fc, 0 0 16px #4fc3ff; }
+  50% { box-shadow: 0 0 24px #0ff6fc, 0 0 32px #4fc3ff; }
+  100% { box-shadow: 0 0 8px #0ff6fc, 0 0 16px #4fc3ff; }
 }
 
 h1, .front-title, h2, .about, .project, .contact-title {
@@ -83,7 +112,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background: #4fc3ff;
+  background: #0ff6fc;
   transition: width 0.3s;
 }
 
@@ -103,12 +132,12 @@ h1, .front-title, h2, .about, .project, .contact-title {
 }
 
 .link:hover {
-  color: #4fc3ff;
+  color: #0ff6fc;
   transform: scale(1.07);
 }
 
 .contact-link:hover {
-  color: #4fc3ff;
+  color: #0ff6fc;
   transform: scale(1.07);
 }
 
@@ -162,9 +191,9 @@ h1, .front-title, h2, .about, .project, .contact-title {
 
 .icons a:hover {
   opacity: 1;
-  background: linear-gradient(135deg, #1de9b6 0%, #2979ff 100%);
+  background: linear-gradient(135deg, #0ff6fc 0%, #2979ff 100%);
   color: #0a0a23;
-  box-shadow: 0 6px 18px 0 rgba(41, 121, 255, 0.18);
+  box-shadow: 0 6px 18px 0 #0ff6fc33;
   transform: scale(1.15);
 }
 
@@ -310,7 +339,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
   position: relative;
   text-align: center;
   font-size: 35px;
-  color: #4fc3ff;
+  color: #0ff6fc;
   margin-top: 100px;
 }
 
@@ -357,7 +386,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
   width: 100%; 
   max-width: 800px; 
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  color: #4fc3ff;
+  color: #0ff6fc;
   margin: 10px;
   padding: 0 5%; 
 }
@@ -408,7 +437,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
   justify-content: center; /* Horizontal centering */
   width: 100%; /* Take full width */
   font-size: 35px; /* Responsive font size */
-  color: #4fc3ff;
+  color: #0ff6fc;
   text-align: center;
   position: relative; /* For absolute positioning if needed */
 }
@@ -453,7 +482,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
   font-size: 20px;
   text-align: center;
   margin-bottom: 10px;
-  color: #4fc3ff;
+  color: #0ff6fc;
 }
 
 .project-text-green {
@@ -476,7 +505,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
   width: 140px;
   height: 43px;
   font-size: 17px;
-  color: #4fc3ff;
+  color: #0ff6fc;
   margin-top: 10px;
 }
 
@@ -524,7 +553,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
 }
 
 .project-box-learn-more {
-  color: #4fc3ff;
+  color: #0ff6fc;
   font-weight: 600;
   margin-top: 8px;
   font-size: 14px;
@@ -567,7 +596,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
 .skills-title {
   text-align: center;
   font-size: 35px;
-  color: #4fc3ff;
+  color: #0ff6fc;
   margin: 0;
   margin-bottom: 10px;
 }
@@ -598,7 +627,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
 .skills-frameworks,
 .skills-tools {
   background: linear-gradient(135deg, rgba(21, 39, 76, 0.8), rgba(11, 30, 60, 0.8));
-  border: 1px solid rgba(79, 195, 255, 0.2);
+  border: 1px solid rgba(15,246,252,0.2);
   border-radius: 20px;
   padding: 30px;
   backdrop-filter: blur(10px);
@@ -610,19 +639,19 @@ h1, .front-title, h2, .about, .project, .contact-title {
 .skills-frameworks:hover,
 .skills-tools:hover {
   transform: translateY(-5px);
-  border-color: rgba(79, 195, 255, 0.4);
+  border-color: rgba(15,246,252,0.4);
   box-shadow: 0 12px 40px rgba(79, 195, 255, 0.15);
 }
 
 .skills-category-title {
-  color: #4fc3ff;
+  color: #0ff6fc;
   font-size: 22px;
   font-weight: 600;
   margin: 0 0 25px 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   text-align: center;
   padding-bottom: 15px;
-  border-bottom: 2px solid rgba(79, 195, 255, 0.2);
+  border-bottom: 2px solid rgba(15,246,252,0.2);
 }
 
 .skills-list {
@@ -664,7 +693,7 @@ h1, .front-title, h2, .about, .project, .contact-title {
   justify-content: center; 
   width: 100%; 
   font-size: 35px; 
-  color: #4fc3ff;
+  color: #0ff6fc;
   text-align: center;
   position: relative; 
 }
@@ -1415,7 +1444,7 @@ button:hover {
     width: 120px;
     height: 37px;
     font-size: 13px;
-    color: #4fc3ff;
+    color: #0ff6fc;
   }
 
   .project-skills-container-2 {
@@ -1650,7 +1679,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, .about, .about-text, .about-text2, .project,
 .footer {
   width: 100%;
   background: #0b1e3c;
-  color: #4fc3ff;
+  color: #0ff6fc;
   padding: 24px 0 16px 0;
   text-align: center;
   margin-top: 60px;
@@ -1687,7 +1716,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, .about, .about-text, .about-text2, .project,
   padding: 10px 20px;
   border-radius: 8px;
   border: none;
-  background: #4fc3ff;
+  background: #0ff6fc;
   color: #0b1e3c;
   font-weight: bold;
   cursor: pointer;
@@ -1716,7 +1745,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, .about, .about-text, .about-text2, .project,
 }
 
 .project-detail-title {
-  color: #4fc3ff;
+  color: #0ff6fc;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
