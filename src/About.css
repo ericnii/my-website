@@ -12,6 +12,36 @@
   box-sizing: border-box;
 }
 
+.about-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.about {
+  position: relative;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(248, 115, 115);
+  margin-top: 100px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.about-typewriter {
+  color: rgb(248, 115, 115);
+}
+
+.about-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  min-height: 600px;
+}
+
 .image-container {
   display: flex;
   position: relative;
@@ -30,31 +60,19 @@
   top: auto;
   left: auto;
   transform: none;
-  max-width: 800px;
+  max-width: 550px;
   width: 45%;
   padding: 0 20px;
   margin-left: 40px;
 }
 
-.about {
-  margin-top: -4%;
-  margin-left: 6.3%;
-  margin-bottom: 5%;
-  font-size: 35px;
-  color: #0ff6fc;
-}
-
-.about-typewriter {
-  color: #ffe066;
-}
-
 .about-text, .about-text2 {
-  width: 100%;
-  max-width: 800px;
+  width: 100%; 
+  max-width: 800px; 
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  color: #0ff6fc;
+  color: #ffffff;
   margin: 10px;
-  padding: 0 5%;
+  padding: 0 5%; 
 }
 
 .about-text {
@@ -62,44 +80,36 @@
 }
 
 .about-text2 {
-  color: white;
+  color: white; 
   font-size: 16px;
   line-height: 1.5;
 }
 
-.skills {
+.about-image {
   position: relative;
-  margin: 10px;
-  padding: 0 5%;
-  font-size: 16px;
+  width: 400px;
+  border-radius: 400px;
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(41, 121, 255, 0.25);
+  transition: box-shadow 0.3s, transform 0.2s;
 }
 
-.skills-title {
-  position: relative;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  color: #ffe066;
-  margin: 10px;
-  margin-top: 5%;
-  padding: 0 5%;
-  font-size: 25px;
+.about-image:hover {
+  box-shadow: 0 14px 40px rgba(41, 121, 255, 0.35);
+  transform: scale(1.03);
 }
 
-.skills-type {
-  position: relative;
-  margin-top: 30px;
-  color: #0ff6fc;
-  margin: 10px;
-  padding: 0 5%;
-  font-size: 16px;
+.yellow-accent {
+  color: rgb(248, 115, 115); 
 }
 
 .resume {
-  background: #ffe066;
-  width: 220px;
-  height: 50px;
-  border-radius: 22px;
+  background: rgb(248, 115, 115);
+  width: 220px; 
+  height: 50px; 
+  border-radius: 22px; 
   border: 1px solid #555;
-  font-size: 16px;
+  font-size: 16px; 
   padding: 0 10px;
   cursor: pointer;
   display: flex;
@@ -108,13 +118,107 @@
   margin-left: 6%;
   margin-top: 20px;
   color: #0a0a23;
+  font-weight: 600;
+  box-shadow: 0 4px 16px 0 rgba(255, 224, 102, 0.18);
+  transition: background 0.3s, color 0.3s, border 0.3s, transform 0.2s, box-shadow 0.3s;
+  animation: swingContact 2s ease-out infinite;
+  z-index: 1;
+}
+
+@keyframes swingContact {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(4deg); }
+  75% { transform: rotate(-4deg); }
 }
 
 .resume:hover {
-  background: #fff;
-  color: #ffe066;
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px 0 rgba(255, 224, 102, 0.28);
+  opacity: 0.7;
+  animation-play-state: paused;
+  transform: scale(1.09) rotate(-1deg);
+  background: #ff1e00;
+}
+
+/* Responsive Design for About */
+@media (max-width: 1440px) {
+  .about-image {
+    width: 340px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about {
+    font-size: 25px; 
+  }
+  .about-text-container {
+    max-width: 500px;
+  }
+  .about-text {
+    font-size: 17px;
+  }
+  .about-text2 {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .image-container {
+    left: 50px;
+  }
+  .about-image {
+    width: 270px;
+  }
+}
+
+@media (max-width: 768px) { 
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-text-container {
+    width: 480px;
+  }
+  .about-text {
+    font-size: 15px;
+  }
+  .about-text2 {
+    font-size: 11px;
+    line-height: 2;
+  }
+  .image-container {
+    left: 20px;
+  }
+  .about-image {
+    width: 240px;
+  }
+  .resume {
+    width: 160px;
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    left: 0;
+    margin-bottom: 24px;
+  }
+  .about-text-container {
+    max-width: 90vw;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .about-text {
+    font-size: 15px;
+  }
+  .about-text2 {
+    font-size: 11px;
+    line-height: 2;
+  }
+  .resume {
+    width: 160px;
+    height: 40px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 900px) {

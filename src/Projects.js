@@ -1,10 +1,7 @@
-import green from './UTMRobotics.png';
-import website from './website.png';
-import Portfolio from './website'
-import Green from './green_def'
+import green from './images/UTMRobotics.png';
 import { useNavigate } from 'react-router-dom';
-import websiteImg from './website.png';
-import './App.css';
+import websiteImg from './images/website.png';
+import './Projects.css';
 
 
 function Projects() {
@@ -23,7 +20,9 @@ function Projects() {
           <img src={green} alt='The Green Defender' className='project-box-image' />
           <h3 className='project-title project-box-title'>The Green Defender</h3>
           <p className='project-text project-box-desc'>An arduino-based robotic device that monitors plant health.</p>
-          <span className='project-box-learn-more'>Click to learn more <span style={{fontSize: '1.1em', marginLeft: '4px'}}>&rarr;</span></span>
+          <span className='project-box-learn-more'>
+            Click to learn more <span style={{fontSize: '1.1em', marginLeft: '4px'}}>&rarr;</span>
+          </span>
         </div>
         <div className='project-box'>
           <h3 className='project-title'>Personal Mysh Terminal</h3>

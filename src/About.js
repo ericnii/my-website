@@ -1,7 +1,8 @@
-import about_me from './about_me.png';
+import about_me from './images/about_me.png';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import './About.css';
 
 function About() {
   const [about] = useTypewriter ({

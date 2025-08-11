@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import websiteImg from './website.png';
+import websiteImg from './images/website.png';
 import './App.css';
 
 const Website = () => {
@@ -30,6 +30,34 @@ const Website = () => {
             </div>
           </div>
         </div>
+        <div style={{ marginTop: '30px', textAlign: 'center' }}>
+            <a 
+              href="https://github.com/ericnii/my-website" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ 
+                color: '#0fb5fc', 
+                textDecoration: 'none', 
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                padding: '12px 24px',
+                border: '2px solid #0fb5fc',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                display: 'inline-block'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = '#0fb5fc';
+                e.target.style.color = '#0a0a23';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = 'transparent';
+                e.target.style.color = '#0fb5fc';
+              }}
+            >
+              View Project on GitHib ↗
+            </a>
+          </div>
         <img src={websiteImg} alt="Personal Portfolio Website Screenshot" className="project-detail-image" />
       </div>
     </div>

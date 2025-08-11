@@ -14,10 +14,12 @@
   justify-content: center;
   width: 100%;
   font-size: 35px;
-  color: #4fc3ff;
+  color: rgb(248, 115, 115);
   margin-top: 5%;
   text-align: center;
   position: relative;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .contact-text {
@@ -31,17 +33,14 @@
 }
 
 form {
+  margin: 0 auto;
+  max-width: 350px;
   position: relative;
-  top:5%;
-  left: 50%;
-  max-width: 600px;
-  height: 30vh;
-  border-radius: 20px;
+  left: 100px;
 }
 
 .input-box {
   margin-top: 25px;
-  margin-bottom: 10px;
 }
 
 form label {
@@ -79,30 +78,32 @@ form button {
   height: 30px;
   border: 2px solid #555;
   border-radius: 9px;
-  font-size:15px;
+  font-size: 15px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background-color: rgb(7, 210, 210);
-  color: #343333;
+  background-color:  rgb(248, 115, 115);
+  color: #000000;
   cursor: pointer;
 }
 
 button:hover {
   opacity: 0.8;
+  background: #ff1e00;
 }
 
 .contact {
   display: flex;
-  justify-content: center;
+  position: relative;
   align-items: center;
   flex-direction: column;
   background-color: transparent;
   width: 100%;
-  top: 90%;
+  right: 15%;
+  top: -400px;
 }
 
 .icons {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  display: flex;
+  flex-direction: column;
   gap: 30px;
   align-items: center;
 }
@@ -111,36 +112,42 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
+  width: 50px; 
   height: 50px;
-  border-radius: 50%;
-  background: rgb(58, 55, 55);
-  color: white;
+  border-radius: 50%; 
+  background: rgb(58, 55, 55); 
+  color: white; 
   font-size: 1.5rem;
+  box-shadow: 0 2px 8px 0 rgba(10, 30, 80, 0.13);
+  transition: box-shadow 0.3s, transform 0.2s, background 0.3s;
+  background: linear-gradient(135deg, #0e3c92 0%, #0b1e48 100%);
+  text-decoration: none;
 }
 
 .icons a:hover {
   opacity: 0.7;
   transform: scale(1.1);
   transition: transform 0.3s ease;
+  background: linear-gradient(135deg, #0ff6fc 0%, #2979ff 100%);
+  color: #0a0a23;
+  box-shadow: 0 6px 18px 0 #0ff6fc33;
 }
 
 .follow {
   font-size: 17px;
-  margin-bottom: 8%;
-}
+ }
 
 .phone {
   position: relative;
   font-size: 50px;
-  color: #4fc3ff;
+  color: #0ff6fc;
   left: 65px;
 }
 
 .email {
   position: relative;
   font-size: 50px;
-  color: #4fc3ff;
+  color: #0ff6fc;
   left: 80px;
   bottom: -8px;
 }
@@ -163,11 +170,202 @@ button:hover {
 }
 
 .my-num {
-  color: #4fc3ff;
+  color: #0ff6fc;
 }
 
 .my-email {
-  color: #4fc3ff;
+  color: #0ff6fc;
+}
+
+/* Responsive Design for Contact */
+@media (max-width: 1440px) {
+  .contact-section {
+    padding-top: 120px;
+  }
+  .contact-text {
+    font-size: 15px;
+  }
+  .field {
+    width: 450px;
+    margin-top: 3px;
+    font-size: 14px;
+  }
+  .msg {
+    width: 450px;
+    height: 200px;
+    font-size: 14px;
+  }
+  form button {
+    width: 450px;
+    height: 25px;
+    font-size: 14px;
+  }
+  .follow {
+    font-size: 15px;
+  }
+  .contact {
+    margin-top: 50px;
+    right: 20%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-title {
+    font-size: 25px; 
+    padding-top: 50px;
+  }
+  .contact-text {
+    font-size: 13px;
+  }
+  .field {
+    width: 350px;
+    font-size: 13px;
+  }
+  .msg {
+    width: 350px;
+    height: 180px;
+    font-size: 13px;
+  }
+  form button {
+    width: 350px;
+    height: 20px;
+    font-size: 13px;
+  }
+  .follow {
+    font-size: 14px;
+  }
+  .contact {
+    right: 10%;
+  }
+}
+
+@media (max-width: 768px) { 
+  .contact-section {
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  .contact-title {
+    font-size: 25px; 
+  }
+  .contact-text {
+    font-size: 13px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .field {
+    width: 350px;
+    font-size: 13px;
+  }
+  .msg {
+    width: 350px;
+    height: 250px;
+    font-size: 13px;
+  }
+  form button {
+    width: 350px;
+    height: 20px;
+    font-size: 13px;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;  
+    margin-top: 30px;
+    right: auto;
+    top: auto;
+    position: relative;
+  }
+  .follow {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  .icons a {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding-top: 10px;
+  }
+  .contact-text {
+    font-size: 12px;
+    width: 330px;
+  }
+  .field {
+    width: 280px;
+    height: 10px;
+    font-size: 10px;
+  }
+  .msg {
+    width: 280px;
+    height: 150px;
+    font-size: 10px;
+  }
+  form button {
+    width: 280px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .contact {
+    margin-top: 20px;
+  }
+  .follow {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  .icons {
+    gap: 15px;
+  }
+  .icons a {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+    font-size: 1.1rem; 
+  }
+}
+
+@media (max-width: 375px) {
+  .contact-text {
+    font-size: 11px;
+    width: 280px;
+  }
+  .field {
+    width: 250px;
+    font-size: 9px;
+  }
+  .msg {
+    width: 250px;
+    height: 120px;
+    font-size: 9px;
+  }
+  form button {
+    width: 250px;
+    height: 18px;
+    font-size: 9px;
+  }
+  .icons {
+    gap: 12px;
+  }
+  .icons a {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  .follow {
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 900px) {
