@@ -1,6 +1,6 @@
 This is my personal interactive portfolio website, built with ReactJS and HTML/CSS. It showcases my projects, skills, and contact information in a modern, responsive, and visually engaging way.
 
-🚀 Features
+Features
 - Responsive Design: Looks great on desktop, tablet, and mobile.
 - Project Gallery: Clickable project cards with detail pages for each project.
 - Smooth Navigation: Uses React Router for seamless page transitions.
@@ -8,7 +8,7 @@ This is my personal interactive portfolio website, built with ReactJS and HTML/C
 - Contact Form: Integrated with Web3Forms for easy messaging.
 - Skills Section: Highlights programming languages, frameworks, and tools.
 
-🛠️ Technologies Used
+Technologies Used
 - ReactJS
 - JavaScript
 - HTML5 & CSS3
@@ -29,5 +29,5 @@ How to run the website locally:
 
 5) Run the server -> npm start
 
-You should now see the website running at http://localhost:3000 ✅ 
+You should now see the website running at http://localhost:3000!
                   
