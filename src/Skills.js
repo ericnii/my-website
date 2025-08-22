@@ -19,6 +19,7 @@ const Skills = () => {
                     <div className="skill-item">C++</div>
                     <div className="skill-item">C</div>
                     <div className="skill-item">SQL</div>
+                    <div className="skill-item">R</div>
                     <div className="skill-item">LaTeX</div>
 
                 </div>
@@ -29,10 +30,10 @@ const Skills = () => {
                     <div className="skill-item">React.js</div>
                     <div className="skill-item">Node.js</div>
                     <div className="skill-item">Express.js</div>
+                    <div className="skill-item">MySQL</div>
                     <div className="skill-item">Tailwind CSS</div>
                     <div className="skill-item">PyTest</div>
                     <div className="skill-item">JUnit</div>
-                    <div className="skill-item">Axios</div>
                 </div>
             </div>
             <div className="skills-tools">
@@ -40,6 +41,7 @@ const Skills = () => {
                 <div className="skills-list">
                     <div className="skill-item">Git</div>
                     <div className="skill-item">GitHub</div>
+                    <div className="skill-item">Docker</div>
                     <div className="skill-item">Bash</div>
                     <div className="skill-item">VS Code</div>
                     <div className="skill-item">IntelliJ</div>

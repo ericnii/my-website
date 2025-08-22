@@ -1,6 +1,11 @@
 import green from './images/UTMRobotics.png';
 import { useNavigate } from 'react-router-dom';
 import websiteImg from './images/website.png';
+import coversumeImg from './images/coversume.png'
+import healImg from './images/healense.png'
+import tictactoeImg from './images/tictactoe.png'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Projects.css';
 
 
@@ -10,6 +15,18 @@ function Projects() {
     <section id='projects' className='projects-section'>
       <h1 className='project'>Projects</h1>
       <div className='project-container'>
+        <div className='project-box' onClick={() => navigate('/coversume', { state: { fromProjects: true } })}>
+          <img src={coversumeImg} alt='CoverSume' className='project-box-image' />
+          <h3 className='project-title project-box-title'>CoverSume</h3>
+          <p className='project-text project-box-desc'>An AI-powered resume and cover letter generator for people in the tech field. </p>
+          <span className='project-box-learn-more'>Click to learn more <span style={{fontSize: '1.1em', marginLeft: '4px'}}>&rarr;</span></span>
+        </div>
+        <div className='project-box' onClick={() => navigate('/healens', { state: { fromProjects: true } })}>
+          <img src={healImg} alt='HeaLENS' className='project-box-image' />
+          <h3 className='project-title project-box-title'>HEALense</h3>
+          <p className='project-text project-box-desc'>An AI-powered image analysis tool.</p>
+          <span className='project-box-learn-more'>Click to learn more <span style={{fontSize: '1.1em', marginLeft: '4px'}}>&rarr;</span></span>
+        </div>
         <div className='project-box' onClick={() => navigate('/website', { state: { fromProjects: true } })}>
           <img src={websiteImg} alt='My Personal Portfolio' className='project-box-image' />
           <h3 className='project-title project-box-title'>My Personal Portfolio</h3>
@@ -24,23 +41,8 @@ function Projects() {
             Click to learn more <span style={{fontSize: '1.1em', marginLeft: '4px'}}>&rarr;</span>
           </span>
         </div>
-        <div className='project-box'>
-          <h3 className='project-title'>Personal Mysh Terminal</h3>
-          <p className='project-text'>A Bash-like terminal emulator in C with 30+ shell features, leveraging POSIX system calls (fork/exec/pipes/signals) and implementing custom parsers for command processing, pipes, and background processes. Demonstrates low-level systems programming mastery.</p>
-          <div className='project-skills-container-2'>
-            <div className='project-skills'>C</div>
-            <div className='project-skills'>Git</div>
-          </div>
-        </div>
-        <div className='project-box'>
-          <h3 className='project-title'>Paint Application</h3>
-          <p className='project-text'>A Windows Paint-inspired application using Java, implementing core features like drawing tools, color selection, and canvas manipulation. Version-controlled with Git to demonstrate collaborative development practices.</p>
-          <div className='project-skills-container-2'>
-            <div className='project-skills'>Java</div>
-            <div className='project-skills'>Git</div>
-          </div>
-        </div>
       </div>
+      <div className='view-all' onClick={() => navigate('/all-projects', { state: { fromProjects: true } })} >View all projects! <FontAwesomeIcon style={{marginLeft: '8px'}} icon={faAngleRight}/> </div>
     </section>
   );
 }

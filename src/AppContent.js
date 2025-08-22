@@ -7,7 +7,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import BlurText from "./BlurText";
 import FadeContent from './FadeContent'
-import Particles from './Particles';
+import Squares from './Squares';
 import {Link} from 'react-scroll'
 import About from './About';
 import Projects from './Projects';
@@ -96,17 +96,14 @@ function AppContent() {
 
 
   return (
-    <div id='home' className="website">
-        <Particles
-            particleColors={['#ffffff', '#ffffff']}
-            particleCount={300}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover={true}
-            alphaParticles={false}
-            disableRotation={false}
-        />
+    <div id='home' className="website">  
+      <Squares 
+      speed={0.5} 
+      squareSize={40}
+      direction='diagonal' 
+      borderColor='#281744'
+      hoverFillColor='#222'
+      />
         <div className='top-categories'>
             <Link to='home' smooth={true} duration={1000} className='link'>Eric Ni</Link>
             <Link to='about' smooth={true} duration={1000} className='link'>About Me</Link>
@@ -133,7 +130,7 @@ function AppContent() {
                 Contact <FontAwesomeIcon icon={faAngleRight} style={{marginLeft: '8px'}} />
             </Link>
             </FadeContent>
-            <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000}>
+            <FadeContent blur={true} duration={1500} easing="ease-out" initialOpacity={0} delay={1000} className='scroll-cont'>
             <Lottie animationData={Scroll} className='scroll-down'/>
             <div className='scroll-text'>Scroll for more</div>
             </FadeContent>

@@ -21,14 +21,15 @@
   position: relative;
   text-align: center;
   font-size: 35px;
-  color: rgb(248, 115, 115);
+  color: rgb(220, 123, 255);
   margin-top: 100px;
   font-weight: 600;
   letter-spacing: 0.04em;
+  pointer-events: none;
 }
 
 .about-typewriter {
-  color: rgb(248, 115, 115);
+  color: rgb(220, 123, 255);
 }
 
 .about-container {
@@ -73,6 +74,8 @@
   color: #ffffff;
   margin: 10px;
   padding: 0 5%; 
+  z-index: 1;
+  pointer-events: none;
 }
 
 .about-text {
@@ -100,11 +103,11 @@
 }
 
 .yellow-accent {
-  color: rgb(248, 115, 115); 
+  color: rgb(220, 123, 255); 
 }
 
 .resume {
-  background: rgb(248, 115, 115);
+  background: rgb(220, 123, 255);
   width: 220px; 
   height: 50px; 
   border-radius: 22px; 
@@ -122,6 +125,7 @@
   box-shadow: 0 4px 16px 0 rgba(255, 224, 102, 0.18);
   transition: background 0.3s, color 0.3s, border 0.3s, transform 0.2s, box-shadow 0.3s;
   animation: swingContact 2s ease-out infinite;
+  position: relative;
   z-index: 1;
 }
 
@@ -132,59 +136,96 @@
 }
 
 .resume:hover {
-  opacity: 0.7;
-  animation-play-state: paused;
-  transform: scale(1.09) rotate(-1deg);
-  background: #ff1e00;
+  background: rgb(224, 46, 255);
+  border-color: rgb(187, 0, 255);
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 8px 20px rgba(180, 41, 255, 0.4);
 }
 
 /* Responsive Design for About */
+/* Standard breakpoints: 1440px, 1024px, 768px, 480px, 375px */
+
 @media (max-width: 1440px) {
+  .about {
+    font-size: 30px;
+    margin-top: 80px;
+  }
+  .about-text {
+    font-size: 22px;
+  }
+  .about-text2 {
+    font-size: 15px;
+  }
   .about-image {
     width: 340px;
+  }
+  .resume {
+    width: 200px;
+    height: 45px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 1024px) {
   .about {
-    font-size: 25px; 
+    font-size: 28px;
+    margin-top: 70px;
   }
   .about-text-container {
     max-width: 500px;
+    margin-left: 30px;
   }
   .about-text {
-    font-size: 17px;
+    font-size: 18px;
   }
   .about-text2 {
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.6;
   }
   .image-container {
-    left: 50px;
+    width: 320px;
   }
   .about-image {
-    width: 270px;
+    width: 280px;
+  }
+  .resume {
+    width: 180px;
+    height: 42px;
+    font-size: 14px;
+    margin-left: 5%;
   }
 }
 
 @media (max-width: 768px) { 
+  .about-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .about {
+    font-size: 26px;
+    margin-top: 60px;
+  }
   .about-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 30px;
   }
   .about-text-container {
-    width: 480px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: 0;
+    padding: 0 20px;
   }
   .about-text {
-    font-size: 15px;
+    font-size: 16px;
   }
   .about-text2 {
-    font-size: 11px;
-    line-height: 2;
+    font-size: 13px;
+    line-height: 1.7;
   }
   .image-container {
-    left: 20px;
+    width: 280px;
   }
   .about-image {
     width: 240px;
@@ -192,50 +233,71 @@
   .resume {
     width: 160px;
     height: 40px;
-    font-size: 12px;
+    font-size: 13px;
+    margin-left: 0;
+    margin-top: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .image-container {
-    left: 0;
-    margin-bottom: 24px;
+  .about-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .about {
+    font-size: 24px;
+    margin-top: 50px;
+  }
+  .about-container {
+    gap: 25px;
   }
   .about-text-container {
     max-width: 90vw;
-    width: 100%;
-    margin: 0;
-    padding: 0 10px;
+    padding: 0 15px;
   }
   .about-text {
     font-size: 15px;
   }
   .about-text2 {
-    font-size: 11px;
-    line-height: 2;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .image-container {
+    width: 240px;
+  }
+  .about-image {
+    width: 200px;
   }
   .resume {
-    width: 160px;
-    height: 40px;
+    width: 150px;
+    height: 38px;
     font-size: 12px;
   }
 }
 
-@media (max-width: 900px) {
-  .about-section {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  .image-container {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 32px;
+@media (max-width: 375px) {
+  .about {
+    font-size: 22px;
+    margin-top: 40px;
   }
   .about-text-container {
-    width: 100%;
-    margin-left: 0;
     padding: 0 10px;
+  }
+  .about-text {
+    font-size: 14px;
+  }
+  .about-text2 {
+    font-size: 11px;
+  }
+  .image-container {
+    width: 200px;
+  }
+  .about-image {
+    width: 180px;
+  }
+  .resume {
+    width: 140px;
+    height: 35px;
+    font-size: 11px;
   }
 } 
