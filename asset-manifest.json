@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b80b684.css",
-    "main.js": "/static/js/main.2d6f392f.js",
+    "main.css": "/static/css/main.fb4f1151.css",
+    "main.js": "/static/js/main.929396a5.js",
     "static/media/UTMRobotics.png": "/static/media/UTMRobotics.ac2d221338ddc8ec9165.png",
     "static/media/healense.png": "/static/media/healense.96aa5f0d0b450c152156.png",
-    "static/media/about_me.png": "/static/media/about_me.6ad3d3a320e1017d1355.png",
+    "static/media/about_me.png": "/static/media/about_me.4179cab67be81b144dee.png",
     "static/media/coversume.png": "/static/media/coversume.b8864784fc93639ebdd1.png",
     "static/media/website.png": "/static/media/website.969eb36afabe591bb6e2.png",
     "static/media/tictactoe.png": "/static/media/tictactoe.2f199f77263e40059389.png",
     "index.html": "/index.html",
-    "main.2b80b684.css.map": "/static/css/main.2b80b684.css.map",
-    "main.2d6f392f.js.map": "/static/js/main.2d6f392f.js.map"
+    "main.fb4f1151.css.map": "/static/css/main.fb4f1151.css.map",
+    "main.929396a5.js.map": "/static/js/main.929396a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b80b684.css",
-    "static/js/main.2d6f392f.js"
+    "static/css/main.fb4f1151.css",
+    "static/js/main.929396a5.js"
   ]
 }
