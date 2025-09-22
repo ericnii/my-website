@@ -30,10 +30,10 @@ const Skills = () => {
                     <div className="skill-item">React.js</div>
                     <div className="skill-item">Node.js</div>
                     <div className="skill-item">Express.js</div>
-                    <div className="skill-item">MySQL</div>
                     <div className="skill-item">Tailwind CSS</div>
                     <div className="skill-item">PyTest</div>
                     <div className="skill-item">JUnit</div>
+                    <div className="skill-item">Jest</div>
                 </div>
             </div>
             <div className="skills-tools">
@@ -41,6 +41,9 @@ const Skills = () => {
                 <div className="skills-list">
                     <div className="skill-item">Git</div>
                     <div className="skill-item">GitHub</div>
+                    <div className="skill-item">MySQL</div>
+                    <div className="skill-item">MongoDB</div>
+                    <div className="skill-item">PostgreSQL</div>
                     <div className="skill-item">Docker</div>
                     <div className="skill-item">Bash</div>
                     <div className="skill-item">VS Code</div>

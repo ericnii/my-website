@@ -521,11 +521,12 @@
     margin-bottom: 8px;
   }
   .project-container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     margin-bottom: 100px;
     padding: 10px;
+    align-items: center;
   }
   .project-box {
     width: 100%;
