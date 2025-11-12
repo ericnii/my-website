@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import tictactoeImg from './images/tictactoe.png';
-import './Projects.css';
+import tictactoeImg from '../images/tictactoe.png';
+import '../pages/Projects.css';
 
 const TicTacToeSolver = () => {
   const navigate = useNavigate();

@@ -1,18 +1,18 @@
-import './App.css';
+import '../styles/App.css';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'; 
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import BlurText from "./BlurText";
-import FadeContent from './FadeContent'
-import Squares from './Squares';
+import BlurText from "../components/BlurText";
+import FadeContent from '../components/FadeContent'
+import Squares from '../components/Squares';
 import {Link} from 'react-scroll'
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
-import Scroll from './scroll.json';
+import Scroll from '../assets/scroll.json';
 import Lottie from 'lottie-react';
 import Skills from "./Skills";
 import { useLocation } from 'react-router-dom';
@@ -30,7 +30,7 @@ function AppContent() {
   }, [location]);
 
   const [text] = useTypewriter ({
-    words: ['CS @ UofT', 'Aspiring Full Stack Developer', 'Aspiring Software Developer', 'Aspiring Web Developer', 'Aspiring AI Developer'],
+    words: ['CS @ UofT', 'I\'m a Full Stack Developer', 'I\'m a Software Developer', 'I\'m a Web Developer', 'Aspiring AI Developer'],
     loop: Infinity,
     typeSpeed: 20,
     deleteSpeed: 20,

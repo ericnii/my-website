@@ -1,14 +1,14 @@
 import React from 'react'
-import './App.css'
+import '../styles/App.css'
 import './Projects.css'
 import { useEffect } from 'react';
-import green from './images/UTMRobotics.png';
+import green from '../images/UTMRobotics.png';
 import { useNavigate } from 'react-router-dom';
-import websiteImg from './images/website.png';
-import coversumeImg from './images/coversume.png'
-import healImg from './images/healense.png'
-import tictactoeImg from './images/tictactoe.png'
-import Squares from './Squares';
+import websiteImg from '../images/website.png';
+import coversumeImg from '../images/coversume.png'
+import healImg from '../images/healense.png'
+import tictactoeImg from '../images/tictactoe.png'
+import Squares from '../components/Squares';
 
 const Viewall = () => {
     const navigate = useNavigate();

@@ -1,11 +1,11 @@
-import './App.css';
-import Website from './website';
-import GreenDef from './green_def';
-import AppContent from './AppContent';
-import ViewAll from './viewall'
-import Coversume from './coversume'
-import Healens from './healens'
-import TicTacToeSolver from './tic-tac-toe-solver'
+import './styles/App.css';
+import Website from './project-details/website';
+import GreenDef from './project-details/green_def';
+import AppContent from './pages/AppContent';
+import ViewAll from './pages/viewall'
+import Coversume from './project-details/coversume'
+import Healens from './project-details/healens'
+import TicTacToeSolver from './project-details/tic-tac-toe-solver'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {

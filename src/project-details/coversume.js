@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import coversume from './images/coversume.png';
-import './App.css';
+import coversume from '../images/coversume.png';
+import '../styles/App.css';
 
 const Coversume = () => {
   const navigate = useNavigate();

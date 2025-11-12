@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import websiteImg from './images/website.png';
-import './App.css';
+import websiteImg from '../images/website.png';
+import '../styles/App.css';
 
 const Website = () => {
   const navigate = useNavigate();

@@ -1,9 +1,9 @@
-import green from './images/UTMRobotics.png';
+import green from '../images/UTMRobotics.png';
 import { useNavigate } from 'react-router-dom';
-import websiteImg from './images/website.png';
-import coversumeImg from './images/coversume.png'
-import healImg from './images/healense.png'
-import tictactoeImg from './images/tictactoe.png'
+import websiteImg from '../images/website.png';
+import coversumeImg from '../images/coversume.png'
+import healImg from '../images/healense.png'
+import tictactoeImg from '../images/tictactoe.png'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Projects.css';

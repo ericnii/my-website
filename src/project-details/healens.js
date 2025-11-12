@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import healens from './images/healense.png';
-import './App.css';
+import healens from '../images/healense.png';
+import '../styles/App.css';
 
 const Healens = () => {
   const navigate = useNavigate();

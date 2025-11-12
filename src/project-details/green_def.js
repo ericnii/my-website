@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import green from './images/UTMRobotics.png';
-import './App.css';
+import green from '../images/UTMRobotics.png';
+import '../styles/App.css';
 
 const GreenDef = () => {
   const navigate = useNavigate();
