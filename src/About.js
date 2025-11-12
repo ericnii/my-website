@@ -29,7 +29,7 @@ function About() {
           <p className='about-text'>
             Hello, my name is <span className='yellow-accent'>Eric</span> 👋 ! 
           </p>
-          <p className='about-text2'>I'm 20, born and raised in Toronto, Canada, and ethnically Chinese. I'm a second-year Computer Science student @ University of Toronto Mississauga with a passion for turning ideas into code. I love tackling challenges, building solutions, and constantly expanding my skills in programming and web development.</p>
+          <p className='about-text2'>I'm 20, born and raised in Toronto, Canada, and ethnically Chinese. I'm a third-year Computer Science and Statistics student @ University of Toronto Mississauga with a passion for turning ideas into code. I love tackling challenges, building solutions, and constantly expanding my skills in programming and web development.</p>
           <p className='about-text2'>Currently, I am working @ MarkiTech.AI as a Backend Software Engineer Intern. I'm always looking for opportunities to collaborate, contribute to meaningful projects, and learn.</p>
           <p className='about-text2'>Outside of coding, I am an avid music-lover, thrifter, swimmer, and gym-goer. I am also a die-hard NBA and MLB fan, with some NHL sprinkled in here and there. If you're wondering, yes I am indeed a Toronto sports fan despite all the heartbreak. I will support the Leafs, Jays, and Raptors forever, and I will die on that hill!</p>
           <a 
