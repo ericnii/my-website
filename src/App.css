@@ -195,11 +195,13 @@ body {
   width: 100px;
   height: 50px;
   top: 190px;
+  z-index: 2;
 }
 
 .scroll-text {
   position: relative;
   top: 190px;
+  z-index: 2;
 }
 
 .project-detail-container {
@@ -452,7 +454,7 @@ body {
 }
 
 /* Z-index for all interactive elements */
-h1, h2, h3, h4, h5, h6, p, span, a, .fade-text, .scroll-down, .scroll-text, .about, .about-text, .about-text2, .project, .project-title, .project-text, .project-text-green, .project-skills, .contact-title, .contact-text, .follow, .my-num, .my-email, .link, .contact-link, .front-button, .resume, .yellow-accent, .project-box, form, .icons {
+h1, h2, h3, h4, h5, h6, p, span, a, .fade-text, .about, .about-text, .about-text2, .project, .project-title, .project-text, .project-text-green, .project-skills, .contact-title, .contact-text, .follow, .my-num, .my-email, .link, .contact-link, .front-button, .resume, .yellow-accent, .project-box, form, .icons {
   z-index: 1;
 }
 
