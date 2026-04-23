@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import tictactoeImg from '../images/tictactoe.png';
 import '../pages/Projects.css';
+import SplashCursor from '../components/SplashCursor';
 
 const TicTacToeSolver = () => {
   const navigate = useNavigate();
@@ -12,6 +13,18 @@ const TicTacToeSolver = () => {
 
   return (
     <div className="project-detail-container">
+      <SplashCursor
+        DENSITY_DISSIPATION={1}
+        VELOCITY_DISSIPATION={0.8}
+        PRESSURE={0.02}
+        CURL={1.2}
+        SPLAT_RADIUS={0.1}
+        SPLAT_FORCE={1000}
+        COLOR_UPDATE_SPEED={10}
+        SHADING
+        RAINBOW_MODE={false}
+        COLOR="#A855F7"
+      />
       <button 
         onClick={() => navigate('/', { state: { scrollToProjects: true } })} 
         className="project-detail-back"
