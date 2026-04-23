@@ -1,19 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.f71c972a.css",
-    "main.js": "/static/js/main.7d96f732.js",
+    "main.css": "/static/css/main.246c67c3.css",
+    "main.js": "/static/js/main.63b59afc.js",
     "static/media/UTMRobotics.png": "/static/media/UTMRobotics.ac2d221338ddc8ec9165.png",
+    "static/media/website.png": "/static/media/website.0f7be8cc55d8a7b3b4c9.png",
     "static/media/healense.png": "/static/media/healense.96aa5f0d0b450c152156.png",
+    "static/media/codesus.png": "/static/media/codesus.675660a2e9b9117202fb.png",
+    "static/media/DSC05286.JPG": "/static/media/DSC05286.273fcbef0c9bf9058c85.JPG",
     "static/media/about_me.png": "/static/media/about_me.4179cab67be81b144dee.png",
-    "static/media/coversume.png": "/static/media/coversume.b8864784fc93639ebdd1.png",
-    "static/media/website.png": "/static/media/website.969eb36afabe591bb6e2.png",
+    "static/media/coversume.png": "/static/media/coversume.8afa754cd833c4fec018.png",
+    "static/media/audify.png": "/static/media/audify.fafa9c21f62dad1f5bf8.png",
+    "static/media/sportsdeck.png": "/static/media/sportsdeck.149cee80125b5bf40cd0.png",
     "static/media/tictactoe.png": "/static/media/tictactoe.2f199f77263e40059389.png",
+    "static/media/website-preview.png": "/static/media/website-preview.8e27dee5b48432c26ea9.png",
+    "static/media/codesus-preview.png": "/static/media/codesus-preview.ade84de0797077e4b4bb.png",
+    "static/media/coversume-preview.png": "/static/media/coversume-preview.1fbbfdcd713e92d578a8.png",
+    "static/media/greendef-preview.png": "/static/media/greendef-preview.4f8f3f62825392371dcc.png",
+    "static/media/tic-tac-toe-solver-preview.png": "/static/media/tic-tac-toe-solver-preview.c9062f9635ce0988d3e5.png",
+    "static/media/sportsdeck-preview.png": "/static/media/sportsdeck-preview.3c4ca51431f89552f39a.png",
+    "static/media/audify-preview.png": "/static/media/audify-preview.8cf321c5b0e4fc3e977f.png",
+    "static/media/healens-preview.png": "/static/media/healens-preview.531be4d4cb7321810ddc.png",
     "index.html": "/index.html",
-    "main.f71c972a.css.map": "/static/css/main.f71c972a.css.map",
-    "main.7d96f732.js.map": "/static/js/main.7d96f732.js.map"
+    "main.246c67c3.css.map": "/static/css/main.246c67c3.css.map",
+    "main.63b59afc.js.map": "/static/js/main.63b59afc.js.map"
   },
   "entrypoints": [
-    "static/css/main.f71c972a.css",
-    "static/js/main.7d96f732.js"
+    "static/css/main.246c67c3.css",
+    "static/js/main.63b59afc.js"
   ]
 }
