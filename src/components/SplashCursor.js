@@ -43,16 +43,16 @@ function SplashCursor({
         }
 
         let config = {
-            SIM_RESOLUTION,
-            DYE_RESOLUTION,
+            SIM_RESOLUTION: 64,
+            DYE_RESOLUTION: 512,
             CAPTURE_RESOLUTION,
             DENSITY_DISSIPATION,
             VELOCITY_DISSIPATION,
             PRESSURE,
-            PRESSURE_ITERATIONS,
+            PRESSURE_ITERATIONS: 10,
             CURL,
-            SPLAT_RADIUS,
-            SPLAT_FORCE,
+            SPLAT_RADIUS: SPLAT_RADIUS * 0.4,
+            SPLAT_FORCE: SPLAT_FORCE * 0.4,
             SHADING,
             COLOR_UPDATE_SPEED,
             PAUSED: false,
