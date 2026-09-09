@@ -10,6 +10,7 @@
   padding-bottom: 80px;
   min-height: 600px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .about-page {
@@ -20,12 +21,14 @@
 .about {
   position: relative;
   text-align: center;
-  font-size: 35px;
+  font-size: clamp(22px, 3vw, 35px);
   color: rgb(220, 123, 255);
-  margin-top: 100px;
+  margin-top: clamp(40px, 6vw, 100px);
   font-weight: 600;
   letter-spacing: 0.04em;
   pointer-events: none;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .about-typewriter {
@@ -62,9 +65,10 @@
   left: auto;
   transform: none;
   max-width: 550px;
-  width: 45%;
+  width: 50%;
   padding: 0 20px;
-  margin-left: 40px;
+  margin-left: clamp(20px, 3vw, 40px);
+  box-sizing: border-box;
 }
 
 .about-text, .about-text2 {
@@ -72,19 +76,19 @@
   max-width: 800px; 
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   color: #ffffff;
-  margin: 10px;
-  padding: 0 5%; 
+  margin: 10px 0;
+  padding: 0; 
   z-index: 1;
 }
 
 .about-text {
-  font-size: 25px;
+  font-size: clamp(15px, 2vw, 25px);
 }
 
 .about-text2 {
   color: white; 
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: clamp(12px, 1.2vw, 16px);
+  line-height: 1.6;
 }
 
 .about-image {
@@ -130,17 +134,16 @@
 
 .resume {
   background: rgba(220, 123, 255, 0.1);
-  width: 220px; 
-  height: 50px; 
+  width: clamp(140px, 16vw, 220px); 
+  height: clamp(38px, 3.5vw, 50px); 
   border-radius: 25px; 
   border: 1px solid rgba(220, 123, 255, 0.5);
-  font-size: 16px; 
+  font-size: clamp(12px, 1.2vw, 16px); 
   padding: 0 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 6%;
   margin-top: 20px;
   color: #fff;
   font-weight: 600;
@@ -151,6 +154,7 @@
   animation: swingContact 2.5s ease-in-out infinite;
   position: relative;
   z-index: 1;
+  text-decoration: none;
 }
 
 @keyframes swingContact {
@@ -171,41 +175,15 @@
 /* Standard breakpoints: 1440px, 1024px, 768px, 480px, 375px */
 
 @media (max-width: 1440px) {
-  .about {
-    font-size: 30px;
-    margin-top: 80px;
-  }
-  .about-text {
-    font-size: 22px;
-  }
-  .about-text2 {
-    font-size: 15px;
-  }
   .about-image {
     width: 340px;
-  }
-  .resume {
-    width: 200px;
-    height: 45px;
-    font-size: 15px;
   }
 }
 
 @media (max-width: 1024px) {
-  .about {
-    font-size: 28px;
-    margin-top: 70px;
-  }
   .about-text-container {
     max-width: 500px;
-    margin-left: 30px;
-  }
-  .about-text {
-    font-size: 18px;
-  }
-  .about-text2 {
-    font-size: 14px;
-    line-height: 1.6;
+    margin-left: 24px;
   }
   .image-container {
     width: 320px;
@@ -213,22 +191,12 @@
   .about-image {
     width: 280px;
   }
-  .resume {
-    width: 180px;
-    height: 42px;
-    font-size: 14px;
-    margin-left: 5%;
-  }
 }
 
 @media (max-width: 768px) { 
   .about-section {
     padding-top: 60px;
     padding-bottom: 60px;
-  }
-  .about {
-    font-size: 26px;
-    margin-top: 60px;
   }
   .about-container {
     flex-direction: column;
@@ -238,29 +206,19 @@
   }
   .about-text-container {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     margin-left: 0;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 5vw, 40px);
     box-sizing: border-box;
   }
-  .about-text {
-    font-size: 16px;
-  }
-  .about-text2 {
-    font-size: 13px;
-    line-height: 1.7;
-  }
   .image-container {
-    width: 280px;
+    width: 260px;
   }
   .about-image {
     width: 240px;
   }
   .resume {
-    width: 160px;
-    height: 40px;
-    font-size: 13px;
-    margin: 15px auto 0; 
+    margin: 20px auto 0; 
     position: relative;
     display: flex;
     align-items: center;
@@ -272,63 +230,28 @@
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .about {
-    font-size: 24px;
-    margin-top: 50px;
-  }
   .about-container {
-    gap: 25px;
+    gap: 20px;
   }
   .about-text-container {
-    max-width: 100vw;
-    padding: 0 15px;
-    box-sizing: border-box;
-  }
-  .about-text {
-    font-size: 15px;
-  }
-  .about-text2 {
-    font-size: 12px;
-    line-height: 1.8;
+    padding: 0 16px;
   }
   .image-container {
-    width: 240px;
+    width: 220px;
   }
   .about-image {
     width: 200px;
   }
-  .resume {
-    width: 150px;
-    height: 38px;
-    font-size: 12px;
-  }
 }
 
 @media (max-width: 375px) {
-  .about {
-    font-size: 22px;
-    margin-top: 40px;
-  }
   .about-text-container {
-    max-width: 100vw;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-  .about-text {
-    font-size: 14px;
-  }
-  .about-text2 {
-    font-size: 11px;
+    padding: 0 12px;
   }
   .image-container {
     width: 200px;
   }
   .about-image {
     width: 180px;
-  }
-  .resume {
-    width: 140px;
-    height: 35px;
-    font-size: 11px;
   }
 } 

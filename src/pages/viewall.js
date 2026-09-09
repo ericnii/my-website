@@ -163,22 +163,28 @@ const Viewall = () => {
                     </div>
                 </Tilt>
                 <Tilt glareEnable={true} glareMaxOpacity={0.15} tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} transitionSpeed={2000} glareBorderRadius="24px" style={{ borderRadius: "24px" }}>
-                    <div className='project-box'>
-                        <h3 className='project-title'>Personal Mysh Terminal</h3>
-                        <p className='project-text'>A Bash-like terminal emulator in C with 30+ shell features, leveraging POSIX system calls (fork/exec/pipes/signals) and implementing custom parsers for command processing, pipes, and background processes. Demonstrates low-level systems programming mastery.</p>
-                        <div className='project-skills-container-2'>
-                            <div className='project-skills'>C</div>
-                            <div className='project-skills'>Git</div>
+                    <div className='project-card-wrapper'>
+                        <div className='project-card-preview' style={{ backgroundImage: `url()` }}></div>
+                        <div className='project-box'>
+                            <h3 className='project-title'>Personal Mysh Terminal</h3>
+                            <p className='project-text'>A Bash-like terminal emulator in C with 30+ shell features, leveraging POSIX system calls (fork/exec/pipes/signals) and implementing custom parsers for command processing, pipes, and background processes. Demonstrates low-level systems programming mastery.</p>
+                            <div className='project-skills-container-2'>
+                                <div className='project-skills'>C</div>
+                                <div className='project-skills'>Git</div>
+                            </div>
                         </div>
                     </div>
                 </Tilt>
                 <Tilt glareEnable={true} glareMaxOpacity={0.15} tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} transitionSpeed={2000} glareBorderRadius="24px" style={{ borderRadius: "24px" }}>
-                    <div className='project-box'>
-                        <h3 className='project-title'>Paint Application</h3>
-                        <p className='project-text'>A Windows Paint-inspired application using Java, implementing core features like drawing tools, color selection, and canvas manipulation. Version-controlled with Git to demonstrate collaborative development practices.</p>
-                        <div className='project-skills-container-2'>
-                            <div className='project-skills'>Java</div>
-                            <div className='project-skills'>Git</div>
+                    <div className='project-card-wrapper'>
+                        <div className='project-card-preview' style={{ backgroundImage: `url()` }}></div>
+                        <div className='project-box'>
+                            <h3 className='project-title'>Paint Application</h3>
+                            <p className='project-text'>A Windows Paint-inspired application using Java, implementing core features like drawing tools, color selection, and canvas manipulation. Version-controlled with Git to demonstrate collaborative development practices.</p>
+                            <div className='project-skills-container-2'>
+                                <div className='project-skills'>Java</div>
+                                <div className='project-skills'>Git</div>
+                            </div>
                         </div>
                     </div>
                 </Tilt>

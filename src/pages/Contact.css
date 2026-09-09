@@ -3,16 +3,18 @@
   position: relative;
   width: 100%;
   padding-top: 80px;
+  padding-bottom: 60px;
   min-height: 600px;
   box-sizing: border-box;
   background: none;
+  overflow-x: hidden;
 }
 
 .contact-title {
   display: flex;
   justify-content: center;
   width: 100%;
-  font-size: 35px;
+  font-size: clamp(22px, 3vw, 35px);
   color: rgb(220, 123, 255);
   margin-top: 5%;
   text-align: center;
@@ -20,6 +22,8 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   pointer-events: none;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .contact-text {
@@ -27,11 +31,14 @@
   justify-content: center;
   position: relative;
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
-  font-size: 17px;
-  top: -1%;
+  font-size: clamp(13px, 1.3vw, 17px);
   z-index: 1;
   pointer-events: none;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 form {
@@ -133,7 +140,7 @@ button:hover {
   flex-direction: column;
   background-color: transparent;
   width: 100%;
-  margin-top: 60px;
+  margin-top: clamp(30px, 4vw, 60px);
 }
 
 .icons {
@@ -170,7 +177,7 @@ button:hover {
 }
 
 .follow {
-  font-size: 17px;
+  font-size: clamp(13px, 1.2vw, 17px);
   z-index: 1;
   pointer-events: none;
 }
@@ -222,37 +229,6 @@ button:hover {
     padding-top: 100px;
   }
 
-  .contact-title {
-    font-size: 32px;
-  }
-
-  .contact-text {
-    font-size: 16px;
-  }
-
-  .field {
-    font-size: 14px;
-  }
-
-  .msg {
-    height: 220px;
-    font-size: 14px;
-  }
-
-  form button {
-    height: 36px;
-    font-size: 14px;
-  }
-
-  .follow {
-    font-size: 16px;
-  }
-
-  .contact {
-    margin-top: 40px;
-    right: 18%;
-  }
-
   .icons a {
     width: 48px;
     height: 48px;
@@ -265,37 +241,6 @@ button:hover {
     padding-top: 80px;
   }
 
-  .contact-title {
-    font-size: 28px;
-    padding-top: 40px;
-  }
-
-  .contact-text {
-    font-size: 15px;
-  }
-
-  .field {
-    font-size: 13px;
-  }
-
-  .msg {
-    height: 200px;
-    font-size: 13px;
-  }
-
-  form button {
-    height: 34px;
-    font-size: 13px;
-  }
-
-  .follow {
-    font-size: 15px;
-  }
-
-  .contact {
-    right: 12%;
-  }
-
   .icons a {
     width: 45px;
     height: 45px;
@@ -306,36 +251,12 @@ button:hover {
 @media (max-width: 768px) {
   .contact-section {
     padding-top: 60px;
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     align-items: center;
     text-align: center;
-  }
-
-  .contact-title {
-    font-size: 26px;
-    padding-top: 30px;
-  }
-
-  .contact-text {
-    font-size: 14px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .field {
-    font-size: 13px;
-  }
-
-  .msg {
-    height: 200px;
-    font-size: 13px;
-  }
-
-  form button {
-    height: 32px;
-    font-size: 13px;
   }
 
   .contact {
@@ -343,14 +264,11 @@ button:hover {
     flex-direction: column;
     text-align: center;
     margin-top: 30px;
-    right: auto;
-    top: auto;
     position: relative;
   }
 
   .follow {
-    font-size: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .icons {
@@ -369,39 +287,15 @@ button:hover {
 @media (max-width: 480px) {
   .contact-section {
     padding-top: 40px;
-  }
-
-  .contact-title {
-    font-size: 24px;
-    padding-top: 20px;
-  }
-
-  .contact-text {
-    font-size: 13px;
-    width: 330px;
-  }
-
-  .field {
-    font-size: 12px;
+    padding-bottom: 30px;
   }
 
   .msg {
     height: 180px;
-    font-size: 12px;
-  }
-
-  form button {
-    height: 30px;
-    font-size: 12px;
   }
 
   .contact {
-    margin-top: 25px;
-  }
-
-  .follow {
-    font-size: 14px;
-    margin-bottom: 15px;
+    margin-top: 20px;
   }
 
   .icons {
@@ -418,30 +312,11 @@ button:hover {
 @media (max-width: 375px) {
   .contact-section {
     padding-top: 30px;
-  }
-
-  .contact-title {
-    font-size: 22px;
-    padding-top: 15px;
-  }
-
-  .contact-text {
-    font-size: 12px;
-    width: 280px;
-  }
-
-  .field {
-    font-size: 11px;
+    padding-bottom: 20px;
   }
 
   .msg {
     height: 160px;
-    font-size: 11px;
-  }
-
-  form button {
-    height: 28px;
-    font-size: 11px;
   }
 
   .icons {
@@ -452,16 +327,5 @@ button:hover {
     width: 35px;
     height: 35px;
     font-size: 1rem;
-  }
-
-  .follow {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 900px) {
-  .contact-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
   }
 }

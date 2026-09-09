@@ -13,22 +13,24 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  font-size: 35px;
+  font-size: clamp(22px, 3vw, 35px);
   color: rgb(220, 123, 255);
   text-align: center;
   position: relative;
   font-weight: 600;
   letter-spacing: 0.04em;
   pointer-events: none;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .project-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 600px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-content: center;
-  padding: 30px;
-  gap: 30px;
-  max-width: 100vw;
+  padding: clamp(10px, 3vw, 30px);
+  gap: clamp(16px, 2vw, 30px);
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -39,6 +41,13 @@
   cursor: pointer;
   border-radius: 24px;
   perspective: 1500px;
+}
+
+/* Ensure wrappers stretch so boxes can match heights */
+.project-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .project-card-preview {
@@ -66,12 +75,13 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
   max-width: 600px;
-  height: 330px;
+  min-height: 320px;
+  height: 100%;
+  flex: 1 1 auto;
   border-radius: 24px;
-  padding: 40px;
-  padding-top: 20px;
+  padding: 30px 30px 24px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   background-color: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
@@ -105,6 +115,8 @@
   font-size: 15px;
   text-align: center;
   line-height: 1.5;
+  width: 100%;
+  max-width: 380px;
 }
 
 .project-box-desc {
@@ -116,7 +128,8 @@
   font-size: 15px;
   text-align: left;
   line-height: 1.7;
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
 }
 
 .project-skills {
@@ -222,102 +235,7 @@
   color: #ffe066;
 }
 
-/* Project Detail Pages */
-.project-detail-container {
-  min-height: 100vh;
-  background: #0b1e3c;
-  color: white;
-  padding: 40px;
-  box-sizing: border-box;
-}
 
-.project-detail-back {
-  margin-bottom: 30px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
-  background: rgb(220, 123, 255);
-  color: #0b1e3c;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-}
-
-.project-detail-back:hover {
-  background: rgb(224, 46, 255);
-  border-color: rgb(187, 0, 255);
-  color: rgba(0, 0, 0, 0.9);
-  box-shadow: 0 8px 20px rgba(214, 31, 255, 0.4);
-}
-
-.project-detail-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.project-detail-text {
-  flex: 1;
-  min-width: 260px;
-  max-width: 700px;
-}
-
-.project-detail-title {
-  color: rgb(220, 123, 255);
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.project-detail-desc {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-.project-detail-tech {
-  margin-top: 40px;
-}
-
-.project-detail-tech-title {
-  color: rgb(220, 123, 255);
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-}
-
-.project-detail-tech-list {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 0;
-}
-
-.project-detail-tech-list .project-skills {
-  font-size: 0.95rem;
-  padding: 10px;
-  min-width: 80px;
-}
-
-.project-detail-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.project-detail-collab {
-  margin-top: 40px;
-}
-
-.project-detail-collab-list {
-  padding-left: 20px;
-  margin: 0;
-  font-size: 1.1rem;
-  color: #0fb5fc;
-  list-style: disc inside;
-}
 
 .view-all {
   display: flex;
@@ -353,22 +271,17 @@
 
 @media (max-width: 1440px) {
   .project {
-    font-size: 30px;
     margin-bottom: 20px;
   }
 
   .project-container {
-    grid-template-columns: repeat(2, minmax(0, 500px));
-    gap: 25px;
-    padding: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
   .project-box {
-    width: 100%;
     max-width: 500px;
-    height: 320px;
-    padding: 30px;
-    padding-top: 15px;
+    padding: 24px;
+    min-height: 300px;
   }
 
   .project-title {
@@ -379,18 +292,16 @@
   .project-text-green {
     font-size: 13px;
     line-height: 1.6;
-    width: 320px;
+    max-width: 320px;
   }
 
   .project-text {
     font-size: 13px;
     line-height: 1.6;
-    width: 350px;
+    max-width: 350px;
   }
 
   .project-skills {
-    width: 110px;
-    height: 28px;
     font-size: 12px;
     padding: 8px 12px;
   }
@@ -430,22 +341,29 @@
 
 @media (max-width: 1024px) {
   .project {
-    font-size: 28px;
     margin-bottom: 15px;
   }
 
   .project-container {
-    grid-template-columns: repeat(2, minmax(0, 400px));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
   .project-box {
-    width: 100%;
     max-width: 400px;
-    height: 300px;
-    padding: 25px;
-    padding-top: 15px;
+    padding: 20px;
+    min-height: 280px;
+  }
+
+  /* Force consistent card height on small phones to avoid visual mismatch */
+  @media (max-width: 430px) {
+    .project-box {
+      min-height: 360px;
+    }
+
+    .project-box-image {
+      width: 200px;
+      height: 110px;
+    }
   }
 
   .project-title {
@@ -456,18 +374,16 @@
   .project-text-green {
     font-size: 12px;
     line-height: 1.5;
-    width: 280px;
+    max-width: 280px;
   }
 
   .project-text {
     font-size: 12px;
     line-height: 1.5;
-    width: 300px;
+    max-width: 300px;
   }
 
   .project-skills {
-    width: 90px;
-    height: 26px;
     font-size: 11px;
     padding: 6px 10px;
   }
@@ -507,8 +423,7 @@
 
 @media (max-width: 768px) {
   .project {
-    font-size: 26px;
-    margin-top: 15%;
+    margin-top: 60px;
     margin-bottom: 10px;
   }
 
@@ -523,7 +438,8 @@
   .project-box {
     width: 100%;
     max-width: 450px;
-    height: 280px;
+    min-height: 280px;
+    height: auto;
     padding: 20px;
   }
 
@@ -535,18 +451,16 @@
   .project-text-green {
     font-size: 13px;
     line-height: 1.5;
-    width: 250px;
+    max-width: 100%;
   }
 
   .project-text {
     font-size: 13px;
     line-height: 1.5;
-    width: 280px;
+    max-width: 100%;
   }
 
   .project-skills {
-    width: 85px;
-    height: 24px;
     font-size: 10px;
     padding: 5px 8px;
   }
@@ -586,75 +500,76 @@
 
 @media (max-width: 480px) {
   .project {
-    font-size: 24px;
-    margin-top: 20%;
+    margin-top: 50px;
     margin-bottom: 8px;
   }
 
   .project-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin-bottom: 100px;
-    padding: 10px;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding: 0 16px;
     align-items: center;
   }
 
   .project-box {
     width: 100%;
-    max-width: 320px;
-    height: 400px;
-    padding: 18px;
+    max-width: 100%;
+    min-height: 280px;
+    height: auto;
+    padding: 20px 16px;
   }
 
   .project-title {
-    font-size: 18px;
-    margin-top: 8%;
-    margin-bottom: 8%;
+    font-size: 17px;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 
   .project-text-green {
-    font-size: 14px;
+    font-size: 13px;
     text-align: left;
     line-height: 1.6;
-    width: 220px;
+    max-width: 100%;
+    width: 100%;
   }
 
   .project-text {
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     line-height: 1.5;
-    width: 240px;
+    max-width: 100%;
+    width: 100%;
   }
 
   .project-skills {
-    width: 100px;
-    height: 32px;
     font-size: 12px;
+    padding: 6px 12px;
   }
 
   .project-skills-container-2 {
-    display: grid;
-    grid-template-columns: repeat(1, 100px);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    margin-top: -8%;
+    gap: 10px;
+    margin-top: 0;
   }
 
   .green-skills-container {
-    display: grid;
-    grid-template-columns: repeat(1, 100px);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    margin-top: -8%;
+    gap: 10px;
+    margin-top: 0;
   }
 
   .project-skills-container-3 {
-    display: grid;
-    grid-template-columns: repeat(1, 100px);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    margin-top: -12%;
+    gap: 8px;
+    margin-top: 0;
   }
 
   .project-box-image {
@@ -677,48 +592,32 @@
 
 @media (max-width: 375px) {
   .project {
-    font-size: 22px;
-    margin-top: 25%;
+    margin-top: 40px;
   }
 
   .project-container {
-    gap: 25px;
-    margin-bottom: 80px;
+    gap: 20px;
+    margin-bottom: 30px;
   }
 
   .project-box {
-    max-width: 280px;
-    height: 380px;
-    padding: 15px;
+    padding: 16px 14px;
   }
 
   .project-title {
     font-size: 16px;
-    margin-top: 6%;
-    margin-bottom: 6%;
   }
 
   .project-text-green {
-    font-size: 13px;
-    width: 200px;
+    font-size: 12px;
   }
 
   .project-text {
-    font-size: 13px;
-    width: 220px;
+    font-size: 12px;
   }
 
   .project-skills {
-    width: 90px;
-    height: 28px;
     font-size: 11px;
-  }
-
-  .project-skills-container-2,
-  .green-skills-container,
-  .project-skills-container-3 {
-    grid-template-columns: repeat(1, 90px);
-    gap: 12px;
   }
 
   .project-box-image {
